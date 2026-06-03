@@ -881,7 +881,561 @@
             </div>
         </div>
 
-        <!-- PLACEHOLDER_PART_3 -->
+                <!-- ========================================================= -->
+        <!-- SECTOR 7: CRAFTING & ARCHITECTURE (100 Commands)          -->
+        <!-- ========================================================= -->
+        <div id="sector7" class="cmd-section">
+            <div class="sector-header"><div class="sector-title">Sector 7: Crafting & Architecture</div><div class="sector-desc">Extract raw materials, decrypt blueprints, and assemble state-of-the-art technological bases.</div></div>
+            
+            <h3 class="page-h3">Extraction, Refining & Materials (Page 1)</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!mine</div><div class="badge public">PUB</div></div><div class="cmd-desc">Extract basic ores (Iron, Copper, Coal).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!mine-deep</div><div class="badge public">PUB</div></div><div class="cmd-desc">Dig deep for rare minerals (Titanium, Uranium).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!chop</div><div class="badge public">PUB</div></div><div class="cmd-desc">Cut wood from virtual forests.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!drill</div><div class="badge public">PUB</div></div><div class="cmd-desc">Use heavy drills to extract stone and granite.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pump-oil</div><div class="badge public">PUB</div></div><div class="cmd-desc">Extract crude oil from deposits.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gather</div><div class="badge public">PUB</div></div><div class="cmd-desc">Gather natural surface resources (Fibers, Plants).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!scavenge-scrap</div><div class="badge public">PUB</div></div><div class="cmd-desc">Search for electronic parts and metal scrap.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!extract-gas</div><div class="badge public">PUB</div></div><div class="cmd-desc">Capture toxic and noble gases.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!harvest-crystals</div><div class="badge public">PUB</div></div><div class="cmd-desc">Extract quantum crystals for microchips.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!scan-minerals</div><div class="badge public">PUB</div></div><div class="cmd-desc">Scan the region for hidden deposits.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!smelt <span>[ore] [qty]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Smelt raw ore into ingots.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!refine <span>[mat]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Refine crude oil into fuel or plastic.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!purify <span>[gas]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Purify toxic gases into useful substances.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!alloy <span>[m1] [m2]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Combine two metals for a superior alloy.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!compress <span>[carbon]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Compress carbon to create rough diamonds.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!distill <span>[liquid]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Distill chemical substances for the lab.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!enrich-uranium</div><div class="badge public">PUB</div></div><div class="cmd-desc">Enrich uranium for nuclear reactors.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!forge-metal</div><div class="badge public">PUB</div></div><div class="cmd-desc">Forge hot metal into armor plates.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!recycle <span>[item]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Destroy an object to recover 30% of materials.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!dismantle <span>[item]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Carefully dismantle electronic parts.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!materials</div><div class="badge public">PUB</div></div><div class="cmd-desc">Display all owned raw materials.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!mat-info <span>[name]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Check the uses of a specific material.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!transfer-mats <span>[@u]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Give raw materials to an engineer.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!mat-market</div><div class="badge public">PUB</div></div><div class="cmd-desc">Open the free material trading market.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!mat-sell <span>[mat] [q]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Sell surplus materials back to the system.</div></div>
+            </div>
+
+            <h3 class="page-h3">Blueprints, Workbenches & Assembly (Page 2)</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!blueprint-list</div><div class="badge admin">ENG</div></div><div class="cmd-desc">View all your decrypted blueprints.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!decrypt-bp <span>[id]</span></div><div class="badge admin">ENG</div></div><div class="cmd-desc">Crack the code of a found blueprint.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!study-bp <span>[id]</span></div><div class="badge admin">ENG</div></div><div class="cmd-desc">Permanently learn the assembly recipe.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!scan-bp <span>[id]</span></div><div class="badge admin">ENG</div></div><div class="cmd-desc">Analyze a blueprint for fabrication cost.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!buy-bp <span>[name]</span></div><div class="badge admin">ENG</div></div><div class="cmd-desc">Buy a standard blueprint from the system store.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!sell-bp <span>[id]</span></div><div class="badge admin">ENG</div></div><div class="cmd-desc">Sell a rare blueprint on the black market.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!trade-bp <span>[@user]</span></div><div class="badge admin">ENG</div></div><div class="cmd-desc">Initiate a secure blueprint exchange.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!combine-bp</div><div class="badge admin">ENG</div></div><div class="cmd-desc">Combine 3 common blueprints for a rare chance.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!bp-rarity</div><div class="badge admin">ENG</div></div><div class="cmd-desc">Display blueprint rarity tiers (Common -> Mythic).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!bp-vault</div><div class="badge admin">ENG</div></div><div class="cmd-desc">Securely store unused blueprints.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!craft <span>[item]</span></div><div class="badge admin">ENG</div></div><div class="cmd-desc">Assemble an object using inventory materials.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!craft-bulk <span>[it] [q]</span></div><div class="badge admin">ENG</div></div><div class="cmd-desc">Create multiple objects simultaneously.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!assemble <span>[mod]</span></div><div class="badge admin">ENG</div></div><div class="cmd-desc">Build a complex module from multiple parts.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!forge-weapon <span>[n]</span></div><div class="badge admin">ENG</div></div><div class="cmd-desc">Forge tactical and assault weaponry.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!craft-armor <span>[n]</span></div><div class="badge admin">ENG</div></div><div class="cmd-desc">Manufacture kevlar vests and exoskeletons.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!craft-tool <span>[n]</span></div><div class="badge admin">ENG</div></div><div class="cmd-desc">Create advanced tools (Plasma Pickaxe, Laser).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!craft-gear <span>[n]</span></div><div class="badge admin">ENG</div></div><div class="cmd-desc">Manufacture accessories for corporate jobs.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!craft-vehicle <span>[n]</span></div><div class="badge admin">ENG</div></div><div class="cmd-desc">Assemble car parts or transport chassis.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!craft-chip <span>[n]</span></div><div class="badge admin">ENG</div></div><div class="cmd-desc">Program and print hacking microchips.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!craft-cancel</div><div class="badge admin">ENG</div></div><div class="cmd-desc">Cancel an ongoing fabrication process.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!workbench-buy</div><div class="badge admin">ENG</div></div><div class="cmd-desc">Purchase a basic crafting workbench.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!workbench-upgrade</div><div class="badge admin">ENG</div></div><div class="cmd-desc">Increase the assembly speed of your bench.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!forge-build</div><div class="badge admin">ENG</div></div><div class="cmd-desc">Construct a forge for heavy equipment.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!3dprinter-buy</div><div class="badge admin">ENG</div></div><div class="cmd-desc">Install a 3D printer for plastics/polymers.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!nano-forge</div><div class="badge owner">MAX</div></div><div class="cmd-desc">Assemble matter at the molecular level.</div></div>
+            </div>
+
+            <h3 class="page-h3">Architecture, Base Building & Defenses (Page 3)</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!base-found <span>[n]</span></div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Lay the foundation of your personal base.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!base-expand</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Expand the square footage of your base.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!build-wall <span>[type]</span></div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Construct walls (Wood, Stone, Concrete, Titanium).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!build-gate</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Install the main access gate.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!build-tower</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Raise a high surveillance watchtower.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!build-bunker</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Dig an underground anti-nuclear bunker.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!build-armory</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Create an armored room for weapons.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!build-garage</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Construct a hangar for military vehicles.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!build-lab</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Open a research laboratory (for new blueprints).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!build-reactor</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Generate your own power for defenses.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!fortify-wall</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Apply an extra layer of armor to walls.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!fortify-gate</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Install biometric locks on the gate.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!install-turret</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Mount an automated motion-sensor turret.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!install-shield</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Activate an energy shield over the base (consumes power).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!install-radar</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Scan a 10km radius for enemy troops.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!install-trap</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Place hidden traps at the base periphery.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!install-mines</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Mine the terrain around the foundation.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!camouflage-base</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Hide the base on the minimap from other factions.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!emp-shield</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Protect turrets against EMP missiles.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!anti-air</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Install surface-to-air missiles against bombardments.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!repair-base</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Use materials to repair base integrity.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!upgrade-base</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Upgrade base to the next Tier (Max Tier 5).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!inspect-base</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Display HP, Power Consumption, and Active Systems.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!base-rename <span>[n]</span></div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Change the name of your fortress.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!base-abandon</div><div class="badge mod">ARCH</div></div><div class="cmd-desc">Dismantle everything and recover 50% of materials.</div></div>
+            </div>
+
+            <h3 class="page-h3">Automation, Factories & Prestige (Page 4)</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!auto-miner</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Install an autonomous ore extraction system.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!auto-smelter</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Smelt ores automatically while offline.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!drone-gather</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Send drones to collect natural resources (Fibers/Wood).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!drone-repair</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Drones will automatically repair base damage (Slowly).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!conveyor-belt</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Connect containers for logistical efficiency.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!factory-build <span>[n]</span></div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Raise a massive factory for mass production.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!factory-status</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Monitor the production flow of the plant.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!factory-collect</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Collect everything produced automatically.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!machine-upgrade</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Increase the working speed of automated machinery.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!machine-fuel</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Add fuel (Oil/Uranium) for machines to run.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!craft-stats</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Complete history (How many objects you've crafted).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!base-stats</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">The total material value of your fortress.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!mastery-level</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Display your degree of assembly mastery.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!prestige-craft</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Reset level for increased Perfect Crafting chances.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!perk-architect</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Unlock cost reductions for walls and towers.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!perk-engineer</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Assembled tools will have +50% durability.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!repair-kit</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Craft a portable emergency repair kit.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!salvage-auto</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Automatically recycles low-quality waste.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-crafting</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Top citizens with the highest mastery level.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-architects</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Those who own the most expensive, defended bases.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-factories</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Industrial empires with the highest automated yield.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-materials</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">The biggest hoarders of raw materials.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!showcase-base</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Display your base in the global community gallery.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!share-bp <span>[@u] [id]</span></div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Lend a rare blueprint to a friend.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!help-craft</div><div class="badge owner">MSTR</div></div><div class="cmd-desc">Launch the assistant architect hologram guide.</div></div>
+            </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- SECTOR 8: GARAGE & RACING (100 Commands)                  -->
+        <!-- ========================================================= -->
+        <div id="sector8" class="cmd-section">
+            <div class="sector-header"><div class="sector-title">Sector 8: Garage & Racing</div><div class="sector-desc">Purchase luxury supercars, tune your engines, and dominate the underground street racing scene.</div></div>
+            
+            <h3 class="page-h3">Showroom, Purchases & Maintenance (Page 1)</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!dealership</div><div class="badge public">PUB</div></div><div class="cmd-desc">Display all cars available for purchase.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!cars-tuner</div><div class="badge public">PUB</div></div><div class="cmd-desc">Category of imported sports cars (JDM).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!cars-muscle</div><div class="badge public">PUB</div></div><div class="cmd-desc">Category of beasts with massive V8 engines.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!cars-exotic</div><div class="badge public">PUB</div></div><div class="cmd-desc">Category of luxury European supercars.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!cars-hyper</div><div class="badge public">PUB</div></div><div class="cmd-desc">Category of monsters with over 1000 horsepower.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!car-info <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">View factory specs (Top Speed, 0-100).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!buy-car <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Purchase a vehicle and deliver it to your garage.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!sell-car <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Sell a used car back to the dealership.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!test-drive <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Pay a fee to test drive a car for one hour.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!auction-car</div><div class="badge public">PUB</div></div><div class="cmd-desc">Search for rare cars up for public auction.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!garage</div><div class="badge public">PUB</div></div><div class="cmd-desc">Open your garage doors and view your collection.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!garage-upgrade</div><div class="badge public">PUB</div></div><div class="cmd-desc">Buy additional parking slots.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!drive <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Set a car as your primary active vehicle.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!park <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Pull the car over and park it.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!car-stats</div><div class="badge public">PUB</div></div><div class="cmd-desc">Check mileage (KM), value, and wear of active car.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!rename-car <span>[n]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Give a custom name to your beast.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!showcase-car</div><div class="badge public">PUB</div></div><div class="cmd-desc">Exhibit your main car on the server.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!give-car <span>[@u] [id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Transfer the car title to another citizen.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!refuel</div><div class="badge public">PUB</div></div><div class="cmd-desc">Stop at the gas station and fill the tank (Costs money).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!repair-car</div><div class="badge public">PUB</div></div><div class="cmd-desc">Repair visual and mechanical damage after a crash.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!oil-change</div><div class="badge public">PUB</div></div><div class="cmd-desc">Change the oil to maintain peak performance.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!car-wash</div><div class="badge public">PUB</div></div><div class="cmd-desc">Wash the car to receive a respect bonus (+Rep).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!register-car</div><div class="badge public">PUB</div></div><div class="cmd-desc">Register the car to drive legally.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!insure-car</div><div class="badge public">PUB</div></div><div class="cmd-desc">Pay insurance policy (Covers total write-offs).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!tow-car</div><div class="badge public">PUB</div></div><div class="cmd-desc">Call the tow truck if out of gas or destroyed.</div></div>
+            </div>
+
+            <h3 class="page-h3">Performance Tuning & Visuals (Page 2)</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!upgrade-engine</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Forge engine internals (Increases acceleration).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!upgrade-turbo</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Install a massive turbo or supercharger.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!upgrade-ecu</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Rewrite the software for unlimited RPMs.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!upgrade-exhaust</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Mount a titanium sports exhaust.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!upgrade-intake</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Install a cold air intake system.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!upgrade-brakes</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Carbon-ceramic brakes for instant stopping.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!upgrade-susp</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Adjustable suspension for cornering stability.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!upgrade-trans</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Sequential gearbox (Reduced shift times).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!weight-reduction</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Remove rear seats and add carbon elements.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!tire-shop</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Buy Slick (Drag) or street tires.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!paint <span>[hex]</span></div><div class="badge admin">MEC</div></div><div class="cmd-desc">Paint the chassis in any color you desire.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!paint-finish <span>[fin]</span></div><div class="badge admin">MEC</div></div><div class="cmd-desc">Apply a special texture (Matte/Gloss/Pearl).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!buy-rims <span>[mod]</span></div><div class="badge admin">MEC</div></div><div class="cmd-desc">Swap stock rims for aftermarket ones.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!install-spoiler</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Mount a huge wing for aerodynamic downforce.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!install-bodykit</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Widen the car with an aggressive exterior kit.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!neon-underglow</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Put lights under the car for night races.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!window-tint <span>[%]</span></div><div class="badge admin">MEC</div></div><div class="cmd-desc">Apply dark tint to the car's windows.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!wrap-custom <span>[n]</span></div><div class="badge admin">MEC</div></div><div class="cmd-desc">Apply a vinyl wrap with a unique design.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!plate-custom <span>[t]</span></div><div class="badge admin">MEC</div></div><div class="cmd-desc">Set a custom license plate (e.g. BOSS).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!install-nos</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Mount a nitrous oxide cylinder (NOS).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!refill-nos</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Refill the cylinder after using it in a race.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!dyno-test</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Put the car on the stand and measure HP.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!tuning-profile</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Save optimal settings (Drag/Drift/Circuit).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!mechanic-hire</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Hire a mechanic to repair your car passively.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!strip-parts</div><div class="badge admin">MEC</div></div><div class="cmd-desc">Dismantle mods and recover 50% of the money.</div></div>
+            </div>
+
+            <h3 class="page-h3">Street Racing & Competitions (Page 3)</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!race <span>[@u] [amt]</span></div><div class="badge mod">RACER</div></div><div class="cmd-desc">Challenge a player to a street race.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!race-accept</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Accept the launched racing challenge.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!drag-race <span>[@u]</span></div><div class="badge mod">RACER</div></div><div class="cmd-desc">Straight line race (Quarter mile) - HP & Tires matter.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!drift-mode</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Launch into a solo drift session for points.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!time-attack</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Try to beat the server's time record.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!circuit-race</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Participate in official races (Up to 8 players).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!highway-pull</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Rolling start race on the highway.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!offroad-rally</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Dirt race (Requires 4x4/Rally cars).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!sprint-random</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Find an NPC opponent and race for cash.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!use-nos</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Activate nitrous injection during an active race.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pink-slip <span>[@u]</span></div><div class="badge mod">RACER</div></div><div class="cmd-desc">Bet your actual car! Loser gives the keys.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pink-accept</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Sign the papers and accept the pink slip race.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!tournament-join</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Enter the weekly Synthexia championship.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!bet-race <span>[@u] [a]</span></div><div class="badge mod">RACER</div></div><div class="cmd-desc">Bet on another competitor who is racing.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!smash-car</div><div class="badge mod">RACER</div></div><div class="cmd-desc">(Event) Demolition Derby race (Total loss risk).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!track-weather</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Check if it's raining (Requires different tires).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!scout-opponent</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Secretly scan the rival's horsepower.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!race-history</div><div class="badge mod">RACER</div></div><div class="cmd-desc">View the logs of your victories and defeats.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!replay-last</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Display the summary of the last run race.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!claim-trophy</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Claim trophies obtained in tournaments.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!trophy-room</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Display your showcase of medals and cups.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!sponsor-sign</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Sign with a firm to receive money per win.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!sponsor-drop</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Cancel the contract with your current sponsor.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!race-daily</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Daily racing missions (e.g. 3 near misses).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!claim-race-daily</div><div class="badge mod">RACER</div></div><div class="cmd-desc">Pick up the reward for auto missions.</div></div>
+            </div>
+
+            <h3 class="page-h3">Heat, Crews & Leaderboards (Page 4)</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!heat-level</div><div class="badge owner">KING</div></div><div class="cmd-desc">Check your police wanted level (Stars 1-5).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!police-chase</div><div class="badge owner">KING</div></div><div class="cmd-desc">Intentionally provoke a police chase for respect.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!evade</div><div class="badge owner">KING</div></div><div class="cmd-desc">Attempt a sudden maneuver to escape patrols.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!bribe-cops <span>[amt]</span></div><div class="badge owner">KING</div></div><div class="cmd-desc">Bribe police to wipe your record (Lowers Heat).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!impound-lot</div><div class="badge owner">KING</div></div><div class="cmd-desc">Check your cars confiscated by the police.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pay-impound <span>[id]</span></div><div class="badge owner">KING</div></div><div class="cmd-desc">Pay the massive fine to recover confiscated car.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!jail-status</div><div class="badge owner">KING</div></div><div class="cmd-desc">See how much time you have behind bars (If caught).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!radar-jammer</div><div class="badge owner">KING</div></div><div class="cmd-desc">Buy an anti-radar device for highway races.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!fake-plates</div><div class="badge owner">KING</div></div><div class="cmd-desc">Mount fake plates to slow Heat level growth.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!crew-create <span>[n]</span></div><div class="badge owner">KING</div></div><div class="cmd-desc">Found your own underground racing crew.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!crew-invite <span>[@u]</span></div><div class="badge owner">KING</div></div><div class="cmd-desc">Invite a friend to the crew.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!crew-join <span>[n]</span></div><div class="badge owner">KING</div></div><div class="cmd-desc">Accept the invitation to the auto crew.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!crew-leave</div><div class="badge owner">KING</div></div><div class="cmd-desc">Hand in your jacket and leave the group.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!crew-race <span>[crw]</span></div><div class="badge owner">KING</div></div><div class="cmd-desc">Launch an official Crew vs Crew challenge.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!crew-garage</div><div class="badge owner">KING</div></div><div class="cmd-desc">Access shared funds and crew cars.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!crew-boost</div><div class="badge owner">KING</div></div><div class="cmd-desc">Buy a global earnings multiplier for the whole group.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-racers</div><div class="badge owner">KING</div></div><div class="cmd-desc">Leaderboard of those with the most street wins.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-drift</div><div class="badge owner">KING</div></div><div class="cmd-desc">Top Drift Kings (Highest score).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-garage</div><div class="badge owner">KING</div></div><div class="cmd-desc">Who owns the most expensive car collection.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-mostwanted</div><div class="badge owner">KING</div></div><div class="cmd-desc">List of the most wanted racers (Highest Heat).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-crews</div><div class="badge owner">KING</div></div><div class="cmd-desc">Top of the most feared car crews in the city.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!prestige-car <span>[id]</span></div><div class="badge owner">KING</div></div><div class="cmd-desc">Scrap a car permanently for Auto Prestige Points.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!prestige-shop</div><div class="badge owner">KING</div></div><div class="cmd-desc">Buy prototype parts impossible to get with normal cash.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!racer-profile <span>[@u]</span></div><div class="badge owner">KING</div></div><div class="cmd-desc">Scan the rep, cars, and performance of a racer.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!help-garage</div><div class="badge owner">KING</div></div><div class="cmd-desc">Launch the digital mechanic's manual.</div></div>
+            </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- SECTOR 9: ECOSYSTEM & FARM (100 Commands)                 -->
+        <!-- ========================================================= -->
+        <div id="sector9" class="cmd-section">
+            <div class="sector-header"><div class="sector-title">Sector 9: Ecosystem & Farm</div><div class="sector-desc">Manage agricultural land, breed livestock, and build a massive agricultural empire.</div></div>
+            
+            <h3 class="page-h3">Land, Seeds & Crops (Page 1)</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!farm</div><div class="badge public">PUB</div></div><div class="cmd-desc">Scan the overall status of your farm.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!buy-field</div><div class="badge public">PUB</div></div><div class="cmd-desc">Purchase a new agricultural plot of land.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!plow <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Plow the land to prepare it for planting.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!field-info <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Check soil moisture and quality.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!buy-greenhouse</div><div class="badge public">PUB</div></div><div class="cmd-desc">Build a greenhouse (Immune to bad weather).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!greenhouse-info</div><div class="badge public">PUB</div></div><div class="cmd-desc">Monitor temperature and plants in the greenhouse.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!expand-farm</div><div class="badge public">PUB</div></div><div class="cmd-desc">Pay to increase the boundaries of your farm.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!soil-test</div><div class="badge public">PUB</div></div><div class="cmd-desc">Analyze the nutrient levels in the soil.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!farm-rename <span>[n]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Give an official name to your farm.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!farm-abandon</div><div class="badge public">PUB</div></div><div class="cmd-desc">Sell farm back to system (Recover 50%).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!seed-shop</div><div class="badge public">PUB</div></div><div class="cmd-desc">Open the catalog of available seeds.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!buy-seed <span>[typ] [q]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Buy seeds (Wheat, Corn, Tomatoes, etc).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!plant <span>[plot] [s]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Plant seeds on plowed land.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!plant-all <span>[s]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Auto-plant on all available empty plots.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!water <span>[plot]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Manually water a crop so it doesn't dry out.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!water-all</div><div class="badge public">PUB</div></div><div class="cmd-desc">Water all plots simultaneously (Consumes water).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!fertilize <span>[plot]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Apply fertilizer to shorten growth time.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pesticide <span>[plot]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Eliminate pests destroying the harvest.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!harvest <span>[plot]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Gather the mature crop.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!harvest-all</div><div class="badge public">PUB</div></div><div class="cmd-desc">Auto-gather all finalized crops.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!clear-dead <span>[plot]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Clear dead or withered crops.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!plant-tree <span>[typ]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Plant a fruit-bearing tree (Apple, Cherry).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!harvest-tree <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Gather fruits from a mature tree.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!chop-tree <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Chop down the fruit tree to make room.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!crop-storage</div><div class="badge public">PUB</div></div><div class="cmd-desc">View the silo with collected harvests.</div></div>
+            </div>
+
+            <h3 class="page-h3">Livestock, Barns & Ponds (Page 2)</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!build-coop</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Construct a chicken coop for birds.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!build-barn</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Construct a barn for large livestock.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!animal-shop</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Open the catalog of available animals.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!buy-animal <span>[typ]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Buy Chickens, Cows, Sheep, or Pigs.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!barn-info</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Check the general state of your animals.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!name-animal <span>[i] [n]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Give a custom name to an animal.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!feed <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Feed a specific animal to produce resources.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!feed-all</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Feed all animals (Consumes Hay/Corn).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!clean-barn</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Clean the barn (Prevents diseases).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-animal <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Offer affection to increase product quality.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!collect-eggs</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Gather eggs from the coop.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!milk-cow <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Milk cows to obtain fresh milk.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!shear-sheep <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Shear sheep to obtain wool.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!collect-truffles</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Send pigs to search for expensive truffles.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!slaughter <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Slaughter an animal for meat.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!incubate-egg</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Place an egg in the incubator to get chicks.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!breed <span>[i1] [i2]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Mate two animals for offspring.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!vet-call <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Call the vet if an animal is critically ill.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!sell-animal <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Sell a mature animal to the slaughterhouse.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!animal-storage</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Check inventory of obtained animal products.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!build-hive</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Install a beehive.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!collect-honey</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Gather honey from the hives.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!build-pond</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Dig a pond for fish farming.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!stock-pond <span>[fish]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Stock the pond with fish.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!net-fish</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Throw the net and gather mature fish.</div></div>
+            </div>
+
+            <h3 class="page-h3">Machinery & Artisan Processing (Page 3)</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!tractor-buy</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Buy a tractor (Speeds up plow/harvest).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!harvester-buy</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Agricultural combine for massive harvesting.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!upgrade-silo</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Increase the capacity of the grain silo.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!build-well</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Dig a well (Infinite water source).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!install-sprinklers</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Mount auto-sprinklers on a plot.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!fill-water</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Fill the water tank from the well.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!machine-repair</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Repair wear on tractors and combines.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!machine-fuel</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Fuel the machinery with diesel.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!build-windmill</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Windmill (Generates passive energy).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!build-fence</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Mount a fence to stop predators.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!build-maker</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Build the artisan food crafting station.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!mill-wheat <span>[q]</span></div><div class="badge mod">ENG</div></div><div class="cmd-desc">Mill wheat to obtain Flour.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!bake-bread <span>[q]</span></div><div class="badge mod">ENG</div></div><div class="cmd-desc">Bake bread from Flour (High value).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!churn-milk</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Process milk into Butter or Cheese.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!make-jam <span>[fruit]</span></div><div class="badge mod">ENG</div></div><div class="cmd-desc">Turn fruits into jam.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!make-wine <span>[grapes]</span></div><div class="badge mod">ENG</div></div><div class="cmd-desc">Press grapes for artisan wine.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!make-juice <span>[fruit]</span></div><div class="badge mod">ENG</div></div><div class="cmd-desc">Squeeze fruits for fresh juices.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!spin-wool</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Pass wool through spindle to make Yarn.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!make-cloth</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Weave yarn into expensive cloth.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!press-oil <span>[flower]</span></div><div class="badge mod">ENG</div></div><div class="cmd-desc">Press seeds to make cooking oil.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!artisan-storage</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Check stock of luxury artisan goods.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!buy-sugar</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Buy sugar (needed for jam).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!buy-salt</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Buy salt (needed for cheese).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!compose-trash</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Put plant scraps in the compost bin.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!take-fertilizer</div><div class="badge mod">ENG</div></div><div class="cmd-desc">Take fertilizer resulting from compost.</div></div>
+            </div>
+
+            <h3 class="page-h3">Market, Employees & Weather (Page 4)</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!farm-market</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Display today's vegetable/animal prices.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!sell-crop <span>[t] [q]</span></div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Sell raw harvest at the market.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!sell-artisan <span>[t] [q]</span></div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Sell processed luxury goods (Big money).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!sell-all-crops</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Sell absolutely everything in the crop silo.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!ship-order</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Complete a special export order (XP Bonus).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!market-trend</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Check which veggies have high demand this week.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!contract-sign</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Sign a weekly delivery contract with a supermarket.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!contract-cancel</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Cancel the contract (Financial penalty).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!hire-helper</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Hire an NPC to water plants automatically.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!hire-harvester</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Hire an NPC to gather crops automatically.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!hire-feeder</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Hire an NPC to feed animals automatically.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pay-helpers</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Pay the daily salary of your workers.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!fire-helper <span>[id]</span></div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Fire an agricultural worker.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!helper-status</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Monitor the activity of your employees.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!weather</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Scan weather (Sun, Rain, Storm, Frost).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!season</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Check current season (Spring/Summer/Fall/Winter).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!protect-storm</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Activate special tarps against hail.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!farm-level</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Display your agricultural experience level.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!farm-prestige</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Reset farm for a permanent Price Multiplier.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!farm-stats</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">History: How many crops you've harvested.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-farmers</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Leaderboard: Top producers on the server.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-farm-wealth</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Agri-Forbes: Who generated the most money.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!compete-fair</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Enter largest animal into County Fair.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!visit-farm <span>[@u]</span></div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Visit other players' farms.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!help-farm</div><div class="badge owner">MAGN</div></div><div class="cmd-desc">Launch the agricultural manual.</div></div>
+            </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- SECTOR 10: GENETICS & PETS (100 Commands)                 -->
+        <!-- ========================================================= -->
+        <div id="sector10" class="cmd-section">
+            <div class="sector-header"><div class="sector-title">Sector 10: Genetics & Pets</div><div class="sector-desc">Incubate biological specimens, manipulate digital genomes, and train them for tactical arena combat.</div></div>
+            
+            <h3 class="page-h3">Incubator & DNA Sequencing (Page 1)</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-lab</div><div class="badge public">PUB</div></div><div class="cmd-desc">Display your biological lab's central panel.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-shop</div><div class="badge public">PUB</div></div><div class="cmd-desc">Catalog of pet eggs and genetic serums.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!buy-egg <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Purchase an egg (Common, Epic, Legendary).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!incubate <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Place egg into the bio-neural incubator.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!egg-status</div><div class="badge public">PUB</div></div><div class="cmd-desc">Monitor time remaining until hatching.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!hatch <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Break the mature egg to obtain the companion.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-list</div><div class="badge public">PUB</div></div><div class="cmd-desc">Display all living creatures in your storage.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-info <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Scan stats, element, and genes of a pet.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-dna <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Extract the genetic fingerprint of specimen.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!dna-extract <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Sacrifice specimen to keep only DNA strands.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!dna-combine <span>[i1] [i2]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Combine two different DNA strands.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!splice <span>[id] [dna]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Inject a new DNA chain into the companion.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!mutate <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Force a genetic mutation (Risk / Huge Bonus).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gene-catalogue</div><div class="badge public">PUB</div></div><div class="cmd-desc">View all discovered genes and mutations.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!clone-pet <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Attempt perfect cloning of a companion.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gene-modify <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Manually change a minor gene of the creature.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-release <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Permanently release a creature into ecosystem.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-rename <span>[id] [n]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Change the ID chip name.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-lock <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Lock companion to prevent accidental deletion.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-trade <span>[@u] [id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Trade a companion with another player.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!serum-buy <span>[typ]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Buy stabilizing serums or catalysts.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!serum-use <span>[i] [t]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Inject serum to stop cellular degradation.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-storage</div><div class="badge public">PUB</div></div><div class="cmd-desc">Check stock of available cryogenic capsules.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-transfer <span>[id]</span></div><div class="badge public">PUB</div></div><div class="cmd-desc">Move a pet from inventory to cryogenic capsule.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lab-upgrade</div><div class="badge public">PUB</div></div><div class="cmd-desc">Upgrade lab equipment for higher success rates.</div></div>
+            </div>
+
+            <h3 class="page-h3">Nutrition, Vitality & Evolution (Page 2)</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-status <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Monitor hunger, thirst, happiness, and energy.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!feed-pet <span>[id] [f]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Feed creature to increase muscle mass.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!food-shop</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Catalog with food, bio meat, and energy drinks.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!buy-food <span>[t] [q]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Purchase food rations.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!water-pet <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Quench your digital companion's thirst.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!feed-all</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Simultaneously feed all active creatures.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!vitamin-give <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Supplement for permanent HP growth.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-clean <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Clean and disinfect creature's life module.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-sleep <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Send companion to sleep to regenerate energy.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-wake <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Wake companion from rest state.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-play <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Interact with pet to increase morale and happiness.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-heal <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Treat wounds acquired from duels.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!buy-medicine</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Buy antibiotics or bio medical kits.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!vet-visit <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Take specimen to vet in case of critical illness.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!clean-all</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Clean all owned habitats.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-love <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Increase attachment level between you and pet.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-evolve <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Trigger evolution to superior form (High reqs).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!evo-stones</div><div class="badge admin">BRD</div></div><div class="cmd-desc">View list of elemental crystals needed for evolution.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-age <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Display real-time age and current biological cycle.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!revive-pet <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Use a plasma defibrillator to resuscitate a pet.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-cemetery</div><div class="badge admin">BRD</div></div><div class="cmd-desc">View archive of passed specimens.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!heal-all</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Instantly treat your entire pet collection.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-hotel</div><div class="badge admin">BRD</div></div><div class="cmd-desc">Send pet to asylum to freeze attributes while AFK.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!hotel-retrieve <span>[i]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Retrieve companion from boarding regime.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!mood-boost <span>[id]</span></div><div class="badge admin">BRD</div></div><div class="cmd-desc">Use an artificial happiness microchip.</div></div>
+            </div>
+
+            <h3 class="page-h3">Training Centers, Skills & Gear (Page 3)</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!train-center</div><div class="badge mod">TRN</div></div><div class="cmd-desc">Display intensity of training programs.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!train-atk <span>[id]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Increase attack stat via physical exercises.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!train-def <span>[id]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Strengthen shell or shield for resistance.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!train-spd <span>[id]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Reflex sessions for speed in duels.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!train-hp <span>[id]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Endurance training for extra health.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!sparring <span>[i1] [i2]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Friendly fight between two of your pets for XP.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!dummy-attack <span>[id]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Test raw damage on an artificial target.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!train-reset <span>[id]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Reset allocated points to rebuild stats.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!skill-tree <span>[id]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Open the creature's special ability matrix.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!skill-learn <span>[i] [s]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Spend talent points for a new attack.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!skills-info <span>[id]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Display damage, cooldown, and status effects.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!equip-move <span>[i] [s]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Set a skill in active combat slot (Max 4).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!unequip-move <span>[i] [s]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Remove attack from active grid.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-element <span>[id]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Find strengths and weaknesses of your element.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!element-synergy</div><div class="badge mod">TRN</div></div><div class="cmd-desc">Complete table of strategic advantages.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-gear <span>[id]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Display equipment installed on specimen.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gear-shop-pet</div><div class="badge mod">TRN</div></div><div class="cmd-desc">Store with titanium claws, lasers, heavy armor.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gear-buy-pet <span>[id]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Buy a tactical item from the catalog.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gear-equip <span>[p] [i]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Install armor on the companion.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gear-unequip <span>[p]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Remove armor and save it in inventory.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gear-upgrade-pet</div><div class="badge mod">TRN</div></div><div class="cmd-desc">Improve stats provided by armor.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gear-repair-pet</div><div class="badge mod">TRN</div></div><div class="cmd-desc">Repair wear of pet military equipment.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-perks <span>[id]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Passive attributes auto-unlocked at certain levels.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!perk-activate <span>[id]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Activate a latent perk during matches.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-xp <span>[id]</span></div><div class="badge mod">TRN</div></div><div class="cmd-desc">Check progress bar to next tactical level.</div></div>
+            </div>
+
+            <h3 class="page-h3">Tactical Arenas & Championships (Page 4)</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!duel-pet <span>[@u] [i]</span></div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Challenge a citizen to a tactical battle.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!duel-accept</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Initiate the turn-based match in central arena.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!duel-decline</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Refuse match and forfeit respect points.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!matchmaking</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Enter auto-queue for NPC opponents.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!ranked-queue</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Search match with real players for LP points.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!ranked-status</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Display current division (Bronze -> Nemesis).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-team</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Display active formation of 3 companions.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!team-add <span>[id]</span></div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Add a creature to your assault team.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!team-remove <span>[slot]</span></div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Remove a creature from base grid.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!forfeit-battle</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Give up current match (Instant loss).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!battle-log</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Extract detailed report of last arena match.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!tournament-join</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Enter the weekly trainers' cup.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!tournament-bracket</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Display stages and championship matches.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!boss-raid-pet</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Launch attack against a Titan beast (Co-op).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!raid-join-pet</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Send strongest companion into active raid.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!raid-rewards-pet</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Collect rewards after taking down the Titan.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-pets-power</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Top most destructive creatures (By Stats).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-pets-wins</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Trainers with the most arena victories.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-dna-masters</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Players with most complex genetic mutations.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-prestige <span>[id]</span></div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Reset max level creature for permanent stat bonus.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!prestige-rewards-pet</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Special shop with medals and holo genetic skins.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-achievements</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Display badges and trophies unlocked in battles.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pet-history <span>[id]</span></div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Exact number of matches, wins, and deaths.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!rader-scan-pets</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Scan enemy team before challenging them.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!help-pets</div><div class="badge owner">CHMP</div></div><div class="cmd-desc">Start the virtual encyclopedia (Synthexia Bestiary).</div></div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Custom Cursor Logic
+        if (window.matchMedia("(pointer: fine)").matches) {
+            const cursorGlow = document.getElementById('cursor-glow');
+            const cursorDot = document.getElementById('cursor-dot');
+            let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+            let glowX = mouseX, glowY = mouseY;
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX; mouseY = e.clientY;
+                cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+            });
+            function renderCursor() {
+                glowX += (mouseX - glowX) * 0.15; glowY += (mouseY - glowY) * 0.15;
+                cursorGlow.style.transform = `translate3d(${glowX}px, ${glowY}px, 0) translate(-50%, -50%)`;
+                requestAnimationFrame(renderCursor);
+            }
+            requestAnimationFrame(renderCursor);
+        }
+
+        // Snowflake Particles
+        const container = document.getElementById('particle-container');
+        const particleCount = window.innerWidth > 768 ? 40 : 15; 
+        for (let i = 0; i < particleCount; i++) {
+            let sf = document.createElement('div'); sf.classList.add('snowflake');
+            sf.style.width = sf.style.height = (Math.random() * 4 + 1) + 'px';
+            sf.style.left = Math.random() * 100 + 'vw';
+            sf.style.animationDuration = (Math.random() * 15 + 10) + 's';
+            sf.style.animationDelay = (Math.random() * 10) + 's';
+            container.appendChild(sf);
+        }
+
+        // Dynamic Greeting & Time Logic
+        function updateTerminalIntro() {
+            const termGreeting = document.getElementById('term-greeting');
+            const termTime = document.getElementById('term-time');
+            const now = new Date();
+            const hour = now.getHours();
+            let greeting = "Good evening";
+            if (hour >= 5 && hour < 12) greeting = "Good morning";
+            else if (hour >= 12 && hour < 18) greeting = "Good afternoon";
+            
+            termGreeting.innerHTML = `<span class="term-highlight">${greeting}, Agent.</span> System reboot successful. Biometric authentication confirmed. Welcome to the ecosystem.`;
+            const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' };
+            termTime.innerHTML = `Secure connection established at: ${now.toLocaleDateString('en-US', options)}`;
+        }
+        updateTerminalIntro();
+        setInterval(updateTerminalIntro, 60000);
+
+        // Category Tab Switching Logic
+        function openSector(sectorName) {
+            document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.cmd-section').forEach(sec => sec.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            const section = document.getElementById(sectorName);
+            if (section) section.classList.add('active');
+        }
+    </script>
+</body>
+</html>
+
 
     </main>
 
