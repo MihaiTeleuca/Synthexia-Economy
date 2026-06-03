@@ -8,76 +8,43 @@
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;700&display=swap');
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #080112; }
-        ::-webkit-scrollbar-thumb { background: #8A2BE2; border-radius: 10px; }
-
+        ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #080112; } ::-webkit-scrollbar-thumb { background: #8A2BE2; border-radius: 10px; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background: #080112; color: #ffffff;
-            font-family: 'Rajdhani', sans-serif;
-            overflow-x: hidden; min-height: 100vh; cursor: none; 
-        }
-
-        /* Plasma Background & Particles */
+        body { background: #080112; color: #ffffff; font-family: 'Rajdhani', sans-serif; overflow-x: hidden; min-height: 100vh; cursor: none; }
         .orb { position: fixed; border-radius: 50%; filter: blur(100px); opacity: 0.25; z-index: 1; pointer-events: none; }
         .orb-1 { width: 50vw; height: 50vw; background: #8A2BE2; top: -10%; left: -10%; }
         .orb-2 { width: 60vw; height: 60vw; background: #4B0082; bottom: -10%; right: -10%; }
         #particle-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
         .snowflake { position: absolute; background: #b05cff; border-radius: 50%; opacity: 0.4; pointer-events: none; animation: fall linear infinite; }
         @keyframes fall { 0% { transform: translateY(-10px) scale(1); opacity: 0; } 20% { opacity: 0.5; } 100% { transform: translateY(100vh) scale(0.3); opacity: 0; } }
-
-        /* Custom Zero-Lag Cursor */
+        
         @media (pointer: fine) {
             .cursor-glow { width: 300px; height: 300px; background: radial-gradient(circle, rgba(138,43,226,0.12) 0%, transparent 70%); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; will-change: transform; transform: translate(-50%, -50%); }
             .cursor-dot { width: 6px; height: 6px; background: #fff; box-shadow: 0 0 15px #8A2BE2; border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 10000; will-change: transform; transform: translate(-50%, -50%); }
         }
         @media (pointer: coarse) { body { cursor: auto; } .cursor-glow, .cursor-dot { display: none !important; } }
 
-        /* Navigation */
-        nav {
-            position: fixed; top: 0; width: 100%; background: rgba(8, 1, 18, 0.85); backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(138, 43, 226, 0.3); z-index: 100; padding: 15px 5%;
-            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
-        }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(8, 1, 18, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(138, 43, 226, 0.3); z-index: 100; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
         .logo { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 900; color: #fff; text-shadow: 0 0 15px #8A2BE2; text-decoration: none; }
         .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
         .nav-links a { color: #b388ff; text-decoration: none; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
         .nav-links a:hover, .nav-links a.active { color: #fff; text-shadow: 0 0 10px #8A2BE2; }
 
-        /* Main Layout */
         main { position: relative; z-index: 10; padding: 100px 5% 50px 5%; max-width: 1400px; margin: 0 auto; }
-
-        /* Terminal Intro Module */
-        .terminal-intro {
-            background: rgba(10, 2, 20, 0.7); border: 1px solid rgba(138, 43, 226, 0.4);
-            border-radius: 10px; padding: 25px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            font-family: 'Fira Code', monospace; position: relative; overflow: hidden;
-        }
+        .terminal-intro { background: rgba(10, 2, 20, 0.7); border: 1px solid rgba(138, 43, 226, 0.4); border-radius: 10px; padding: 25px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); font-family: 'Fira Code', monospace; position: relative; overflow: hidden; }
         .terminal-intro::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: #8A2BE2; box-shadow: 0 0 15px #8A2BE2; }
         .term-header { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: #fff; text-shadow: 0 0 10px #8A2BE2; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
         .term-text { color: #a5a5a5; font-size: 1rem; line-height: 1.6; margin-bottom: 10px; }
-        .term-highlight { color: #b05cff; font-weight: bold; }
         .term-footer { font-size: 0.85rem; color: #555; margin-top: 20px; display: flex; justify-content: space-between; border-top: 1px solid rgba(138,43,226,0.2); padding-top: 10px; }
-        
         .sys-links { display: flex; gap: 15px; margin-top: 15px; }
         .sys-links a { color: #27c93f; text-decoration: none; border-bottom: 1px dashed #27c93f; transition: 0.3s; }
         .sys-links a:hover { color: #fff; border-color: #fff; }
 
-        /* Category Menu */
         .category-menu { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
-        .cat-btn {
-            background: rgba(15, 3, 26, 0.8); border: 1px solid rgba(138, 43, 226, 0.3); color: #b388ff;
-            padding: 12px 20px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-weight: 700;
-            text-transform: uppercase; cursor: none; transition: all 0.3s ease; letter-spacing: 1px; font-size: 0.9rem;
-        }
+        .cat-btn { background: rgba(15, 3, 26, 0.8); border: 1px solid rgba(138, 43, 226, 0.3); color: #b388ff; padding: 12px 20px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-weight: 700; text-transform: uppercase; cursor: none; transition: all 0.3s ease; letter-spacing: 1px; font-size: 0.9rem; }
         .cat-btn:hover { background: rgba(138, 43, 226, 0.2); border-color: #b05cff; color: #fff; transform: translateY(-2px); }
         .cat-btn.active { background: #8A2BE2; border-color: #b05cff; color: #fff; box-shadow: 0 0 20px rgba(138, 43, 226, 0.6); }
 
-        /* Command Sections */
         .cmd-section { display: none; animation: fadeIn 0.5s ease forwards; }
         .cmd-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -86,29 +53,22 @@
         .sector-title { font-family: 'Orbitron', sans-serif; font-size: 1.6rem; color: #fff; margin-bottom: 5px; }
         .sector-desc { color: #a5a5a5; font-size: 1.05rem; }
 
-        /* Command Grid */
         .cmd-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 15px; }
         .cmd-row { background: rgba(0, 0, 0, 0.5); border-left: 3px solid #8A2BE2; border-radius: 6px; padding: 18px; display: flex; flex-direction: column; gap: 10px; transition: 0.3s; }
         .cmd-row:hover { background: rgba(138, 43, 226, 0.1); border-left-color: #b05cff; transform: translateX(5px); }
-        
         .cmd-top { display: flex; justify-content: space-between; align-items: center; }
         .cmd-syntax { font-family: 'Fira Code', monospace; font-size: 1.15rem; color: #fff; font-weight: bold; }
         .cmd-syntax span { color: #b388ff; font-size: 0.95rem; font-weight: normal; }
         
-        /* Badges */
         .badge { font-family: 'Orbitron', sans-serif; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 12px; text-transform: uppercase; letter-spacing: 1px; }
         .badge.owner { background: rgba(255, 60, 60, 0.15); color: #ff5f56; border: 1px solid #ff5f56; }
         .badge.admin { background: rgba(255, 189, 46, 0.15); color: #ffbd2e; border: 1px solid #ffbd2e; }
         .badge.mod { background: rgba(39, 201, 63, 0.15); color: #27c93f; border: 1px solid #27c93f; }
         .badge.public { background: rgba(138, 43, 226, 0.15); color: #d1b3ff; border: 1px solid #8A2BE2; }
-
         .cmd-desc { font-size: 1.05rem; color: #d1b3ff; line-height: 1.5; }
+        .page-h3 { color: #fff; font-family: 'Orbitron'; margin: 40px 0 15px 0; border-bottom: 1px solid rgba(138,43,226,0.3); padding-bottom: 5px; }
 
-        @media (max-width: 768px) {
-            .cmd-grid { grid-template-columns: 1fr; }
-            .term-footer { flex-direction: column; gap: 10px; }
-            .cmd-top { flex-direction: column; align-items: flex-start; gap: 10px; }
-        }
+        @media (max-width: 768px) { .cmd-grid { grid-template-columns: 1fr; } .term-footer { flex-direction: column; gap: 10px; } .cmd-top { flex-direction: column; align-items: flex-start; gap: 10px; } }
     </style>
 </head>
 <body>
@@ -135,7 +95,8 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A2BE2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                 SYNTHEX CENTRAL MAINFRAME
             </div>
-            <div class="term-text">Good morning, Agent. System reboot successful. Biometric authentication confirmed. Welcome to the ecosystem, <span class="term-highlight">teleucamihai</span>.</div>
+            <!-- Dynamic Greeting Text -->
+            <div class="term-text" id="term-greeting">Initializing connection protocols...</div>
             <div class="term-text">You have established a secure connection to the central neural network. Synthexia offers a complete and immersive digital universe. Select a module from the lower dashboard to download system data.</div>
             
             <div class="sys-links">
@@ -145,84 +106,152 @@
 
             <div class="term-footer">
                 <span>Synthexia HQ OS v4.5 • Awaiting User Input...</span>
-                <span>Secure connection established at: 03/June/2026 · 06:55 UTC</span>
+                <span id="term-time">Secure connection established at: --/--/----</span>
             </div>
         </div>
 
         <!-- CATEGORY NAVIGATION -->
         <div class="category-menu">
             <button class="cat-btn active" onclick="openSector('core')">Core & Utilities</button>
-            <button class="cat-btn" onclick="openSector('civil')">Civil & Economy</button>
-            <button class="cat-btn" onclick="openSector('crypto')">Tech & Crypto</button>
-            <button class="cat-btn" onclick="openSector('warfare')">War & Territories</button>
-            <button class="cat-btn" onclick="openSector('lifestyle')">Lifestyle & Nature</button>
+            <button class="cat-btn" onclick="openSector('basic')">Basic & Economy</button>
+            <button class="cat-btn" onclick="openSector('career')">Career & Academy</button>
         </div>
 
-        <!-- SECTOR 1: CORE & UTILITIES -->
+        <!-- ============================================== -->
+        <!-- SECTOR 1: CORE & UTILITIES (100 Commands)      -->
+        <!-- ============================================== -->
         <div id="core" class="cmd-section active">
             <div class="sector-header">
                 <div class="sector-title">Core & Utilities Sector</div>
                 <div class="sector-desc">Analyze vital server diagnostics, configure account parameters, manage your avatar, and utilize advanced tools.</div>
             </div>
 
-            <!-- Page 1 Translated -->
-            <h3 style="color: #fff; font-family: 'Orbitron'; margin: 20px 0 15px 0; border-bottom: 1px solid rgba(138,43,226,0.3); padding-bottom: 5px;">Premium & Core Protocols</h3>
+            <h3 class="page-h3" style="margin-top: 10px;">Premium & Core Protocols</h3>
             <div class="cmd-grid">
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">/premium</div><div class="badge public">VIP</div></div><div class="cmd-desc">View your current VIP status and benefits.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">/premium-buy</div><div class="badge public">VIP</div></div><div class="cmd-desc">Access the secure VIP purchasing portal.</div></div>
-                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!give-premium <span>[@user]</span></div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Grant a permanent VIP license to a citizen.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!premium-perks</div><div class="badge public">VIP</div></div><div class="cmd-desc">Complete list of ecosystem multipliers.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!give-premium <span>[@user]</span></div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Grant a permanent VIP license.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!give-trial <span>[@user]</span></div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Activate a temporary VIP license (72h).</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!take-premium <span>[@user]</span></div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Instantly revoke VIP access.</div></div>
-                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-ban <span>[@user]</span></div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Block user access to the entire ecosystem.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!premium-users</div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Extract the global list of VIP subscribers.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!premium-stats <span>[@user]</span></div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Check a citizen's VIP history.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!promo-code <span>[code]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Claim a promotional code for VIP status.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!promo-create <span>[days]</span></div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Generate a VIP promotional code.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-ban <span>[@user]</span></div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Block user access to the ecosystem.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-unban <span>[@user]</span></div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Lift the global restriction.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-maintenance</div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Toggle mainframe maintenance mode.</div></div>
-                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-add-money <span>[@u] [amount]</span></div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Generate funds directly from the federal reserve.</div></div>
-                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-stats</div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Display network latency and connected servers.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-broadcast <span>[text]</span></div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Send a global message to all servers.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-eval <span>[code]</span></div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Execute raw code in the console.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-reboot</div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Force reboot the central terminal.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-logs</div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Display the latest system errors.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-db-backup</div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Create a database backup.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-db-restore</div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Restore the database to the latest state.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-whitelist</div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Allow testing only by developers.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-bl-server <span>[ID]</span></div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Ban the bot from accessing a specific server.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-add-money <span>[@u] [amt]</span></div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Generate funds from the federal reserve.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-remove-money <span>[@u] [amt]</span></div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Delete funds from an account.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-reset-global</div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Reset the global economy.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!core-stats</div><div class="badge owner">OWNER</div></div><div class="cmd-desc">Display latency and connected servers.</div></div>
             </div>
 
-            <!-- Page 2 Translated -->
-            <h3 style="color: #fff; font-family: 'Orbitron'; margin: 40px 0 15px 0; border-bottom: 1px solid rgba(138,43,226,0.3); padding-bottom: 5px;">Local Ecosystem Configuration</h3>
+            <h3 class="page-h3">Local Ecosystem Configuration</h3>
             <div class="cmd-grid">
-                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-prefix <span>[prefix]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Modify the bot's local command prefix.</div></div>
-                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-lang <span>[language]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Set the primary language for the sector.</div></div>
-                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!toggle-eco</div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Enable/Disable the local economy module.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-prefix <span>[prefix]</span></div><div class="badge owner">SRV OWN</div></div><div class="cmd-desc">Modify the bot's local command prefix.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-lang <span>[language]</span></div><div class="badge owner">SRV OWN</div></div><div class="cmd-desc">Set the primary language for the sector.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-ecoadmin <span>[@User]</span></div><div class="badge owner">SRV OWN</div></div><div class="cmd-desc">Grant economy admin access to a member.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-ecochannel <span>[#Channel]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Lock eco commands to a specific channel.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-ecologs <span>[#Channel]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Set the transaction log channel.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!eco-status</div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Display the status of financial modules.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!toggle-eco</div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Enable/Disable the local economy.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!toggle-rob</div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Allow or forbid player robbery.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!toggle-crime</div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Enable high-risk crime protocols.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!toggle-leveling</div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Start the chat-based XP system.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-tax-rate <span>[%]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Set the tax percentage withheld from work.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-work-cd <span>[sec]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Cooldown time for Work command.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-rob-cd <span>[sec]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Cooldown time for Rob command.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-crime-cd <span>[sec]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Cooldown time for Crime command.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-start-bal <span>[amount]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Starting funds for new users.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-max-bal <span>[amount]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Maximum wallet limit.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!add-custom-item <span>[name] [price]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Create a local shop item.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!remove-custom-item <span>[name]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Delete a local shop item.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-welcome <span>[#Channel]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Enable automated player welcome protocols.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-leave <span>[#Channel]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Enable player leave messages.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-modlogs <span>[#Channel]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Log server warnings and bans.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-autorole <span>[@Role]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Set the role automatically granted upon entry.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-tickets <span>[#Channel]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Enable the internal support ticket system.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!set-suggestions <span>[#Channel]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Start the suggestion terminal.</div></div>
             </div>
 
-            <!-- Page 3 Translated -->
-            <h3 style="color: #fff; font-family: 'Orbitron'; margin: 40px 0 15px 0; border-bottom: 1px solid rgba(138,43,226,0.3); padding-bottom: 5px;">Enforcement & Safety Protocols</h3>
+            <h3 class="page-h3">Enforcement & Safety Protocols</h3>
             <div class="cmd-grid">
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!kick <span>[@user] [reason]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Expel a citizen from the network.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!ban <span>[@user] [reason]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Permanently exclude a citizen.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!unban <span>[ID]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Lift the exclusion restriction.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!timeout <span>[@user] [time]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Isolate the citizen (Chat restricted).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!untimeout <span>[@user]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Lift the citizen's isolation.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!mute <span>[@user]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Apply a restricted Mute role.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!unmute <span>[@user]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Remove the Mute role.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!warn <span>[@user] [reason]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Log a formal infraction warning.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!unwarn <span>[@user] [ID]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Delete a warning from the system.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!warns <span>[@user]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Check the infraction dossier.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!clear <span>[1-100]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Purge messages from the current channel.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lock <span>[#Channel]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Lock channel for maintenance.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!unlock <span>[#Channel]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Unlock discussion channel.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!slowmode <span>[sec]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Set messages per second limit.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!nuke</div><div class="badge mod">MOD</div></div><div class="cmd-desc">Destroy and recreate channel (Total purge).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!anti-spam <span>[on/off]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Toggle automated anti-spam shield.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!anti-link <span>[on/off]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Automatically delete unauthorized links.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!anti-raid <span>[on/off]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Toggle protection against massive assaults.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!verify-setup</div><div class="badge mod">MOD</div></div><div class="cmd-desc">Create a captcha entry panel.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!audit <span>[@user]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Extract moderation action history.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lockdown <span>[on/off]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Lockdown absolutely all server channels.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!role-all <span>[@Role]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Add a role to all citizens.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!strip-roles <span>[@user]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Remove all roles from a citizen.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!quarantine <span>[@user]</span></div><div class="badge mod">MOD</div></div><div class="cmd-desc">Move user to total isolation.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!mod-stats</div><div class="badge mod">MOD</div></div><div class="cmd-desc">Display sanctions applied by moderators.</div></div>
             </div>
 
-            <!-- Page 4 Translated -->
-            <h3 style="color: #fff; font-family: 'Orbitron'; margin: 40px 0 15px 0; border-bottom: 1px solid rgba(138,43,226,0.3); padding-bottom: 5px;">Public Information & Tools</h3>
+            <h3 class="page-h3">Public Information & Tools</h3>
             <div class="cmd-grid">
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!ping</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Check network connection latency.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!botinfo</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Extract bot data and statistics.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!userinfo <span>[@user]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Scan a citizen's digital fingerprint.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!serverinfo</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Display local sector technical details.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!avatar <span>[@user]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Extract user profile image.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!banner <span>[@user]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Extract user profile banner.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!server-icon</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Download current server emblem.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!invite</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Generate official Synthexia link.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!vote</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Support network and receive rewards.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!report <span>[text]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Report a bug or a citizen.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!suggest <span>[text]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Send an ecosystem proposal.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!afk <span>[reason]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Activate hibernation mode (AFK).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!remind <span>[time] [text]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Program a system alarm.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!weather <span>[city]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Scan current meteorological conditions.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!calc <span>[math]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Activate the mathematical processor.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!translate <span>[lang] [text]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Decrypt messages from other languages.</div></div>
-                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!help / /terminal</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Launch the Central Command Terminal.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!poll <span>[question]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Launch a public opinion poll.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gw-start <span>[t] [prize]</span></div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Launch a giveaway draw.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gw-end</div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Force close the giveaway.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gw-reroll</div><div class="badge admin">ADMIN</div></div><div class="cmd-desc">Draw a new winner.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!ticket-open</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Open a support line (Ticket).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!ticket-close</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Close active support line.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!leaderboard-eco</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Display wealthiest citizens.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!level</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Check experience and chat rank.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!help / /terminal</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Launch the Central Terminal.</div></div>
             </div>
         </div>
 
-        <!-- SECTOR 2: CIVIL & ECONOMY -->
-        <div id="civil" class="cmd-section">
+        <!-- ============================================== -->
+        <!-- SECTOR 2: BASIC & ECONOMY (100 Commands)       -->
+        <!-- ============================================== -->
+        <div id="basic" class="cmd-section">
             <div class="sector-header">
-                <div class="sector-title">Civil & Economic Sector</div>
-                <div class="sector-desc">Obtain academic certifications, pursue a successful career, acquire luxury properties, and generate passive income. (Authorization: Level 0 - Public Access)</div>
+                <div class="sector-title">Basic & Economy Sector</div>
+                <div class="sector-desc">Manage your digital funds, access the black market, and establish your financial identity within the network.</div>
             </div>
 
-            <!-- Page 1: Funds & Income -->
-            <h3 style="color: #fff; font-family: 'Orbitron'; margin: 20px 0 15px 0; border-bottom: 1px solid rgba(138,43,226,0.3); padding-bottom: 5px;">Funds Management & Income Generation</h3>
+            <h3 class="page-h3" style="margin-top: 10px;">Funds Management & Income Generation</h3>
             <div class="cmd-grid">
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!bal <span>[@user]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Scan current balance (Wallet & Bank).</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!dep <span>[amount/all]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Deposit funds into the bank vault.</div></div>
@@ -251,8 +280,7 @@
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!vote-reward</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Claim reward for supporting the network.</div></div>
             </div>
 
-            <!-- Page 2: Banking & Commerce -->
-            <h3 style="color: #fff; font-family: 'Orbitron'; margin: 40px 0 15px 0; border-bottom: 1px solid rgba(138,43,226,0.3); padding-bottom: 5px;">Banking, Commerce & Black Market</h3>
+            <h3 class="page-h3">Banking, Commerce & Black Market</h3>
             <div class="cmd-grid">
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!bank</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">View official bank statements.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!bank-upgrade</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Increase maximum vault storage capacity.</div></div>
@@ -281,8 +309,7 @@
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!poor</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Display bankrupt citizens.</div></div>
             </div>
 
-            <!-- Page 3: Assets & Identity -->
-            <h3 style="color: #fff; font-family: 'Orbitron'; margin: 40px 0 15px 0; border-bottom: 1px solid rgba(138,43,226,0.3); padding-bottom: 5px;">Assets, Inventory & Digital Identity</h3>
+            <h3 class="page-h3">Assets, Inventory & Digital Identity</h3>
             <div class="cmd-grid">
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!inv <span>[page]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Display assets currently in storage.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!use <span>[item]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Consume or activate a digital object.</div></div>
@@ -311,8 +338,7 @@
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!skills</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Display basic skills (Luck, Negotiation).</div></div>
             </div>
 
-            <!-- Page 4: Social & Casino -->
-            <h3 style="color: #fff; font-family: 'Orbitron'; margin: 40px 0 15px 0; border-bottom: 1px solid rgba(138,43,226,0.3); padding-bottom: 5px;">Social, Teams & Casino Risk</h3>
+            <h3 class="page-h3">Social, Teams & Casino Risk</h3>
             <div class="cmd-grid">
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!marry <span>[@user]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Propose an official civil partnership.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!divorce</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Break the civil partnership.</div></div>
@@ -324,16 +350,16 @@
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!party-kick <span>[@user]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Remove a member from the party.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!party-leave</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Leave the current party.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!party-chat <span>[text]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Send a secure message to the group.</div></div>
-                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!duel <span>[@user] [amount]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Challenge a player for money.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!duel <span>[@user] [amt]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Challenge a player for money.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!duel-accept</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Accept a financial duel.</div></div>
-                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!coinflip <span>[H/T] [amount]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Bet on a coin toss.</div></div>
-                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!rps <span>[choice] [amount]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Play Rock-Paper-Scissors for money.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!coinflip <span>[H/T] [amt]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Bet on a coin toss.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!rps <span>[choice] [amt]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Play Rock-Paper-Scissors for money.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!slots <span>[amount]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Bet at the electronic slots.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!roll <span>[amount]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Roll digital dice (1-100).</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!blackjack <span>[amount]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Play a hand of 21 against the dealer.</div></div>
-                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!roulette <span>[color] [amount]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Bet on the Synthexia roulette.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!roulette <span>[color] [amt]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Bet on the Synthexia roulette.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!scratch <span>[amount]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Buy a scratch-off ticket.</div></div>
-                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!guess <span>[1-10] [amount]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Guess the number (1-10) for money.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!guess <span>[1-10] [amt]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Guess the number (1-10) for money.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lottery-buy</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Buy a global lottery ticket.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lottery-view</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">View the lottery draw status.</div></div>
                 <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gamble-stats</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">View your casino win/loss record.</div></div>
@@ -342,43 +368,129 @@
             </div>
         </div>
 
-
-        <!-- SECTOR 3: CRYPTO (Placeholder) -->
-        <div id="crypto" class="cmd-section">
+        <!-- ============================================== -->
+        <!-- SECTOR 3: CAREER & ACADEMY (100 Commands)      -->
+        <!-- ============================================== -->
+        <div id="career" class="cmd-section">
             <div class="sector-header">
-                <div class="sector-title">Technology & Crypto Sector</div>
-                <div class="sector-desc">Install high-performance mining rigs, extract cryptocurrency, and speculate on the volatile digital market.</div>
+                <div class="sector-title">Career & Academy Sector</div>
+                <div class="sector-desc">Obtain academic certifications, pursue a successful career, acquire luxury properties, and climb the corporate ladder.</div>
             </div>
-            <div class="cmd-grid" id="crypto-grid">
-                <div class="cmd-row" style="opacity: 0.5; text-align: center; grid-column: 1 / -1;">
-                    <div class="cmd-desc">Awaiting Mainframe Data Injection...</div>
-                </div>
-            </div>
-        </div>
 
-        <!-- SECTOR 4: WARFARE (Placeholder) -->
-        <div id="warfare" class="cmd-section">
-            <div class="sector-header">
-                <div class="sector-title">Warfare & Territories Sector</div>
-                <div class="sector-desc">Form an invincible faction, conquer rival territories, extract rare minerals, and build fortified bases.</div>
+            <h3 class="page-h3" style="margin-top: 10px;">Academic System & Research</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!uni-list</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Display available academies and faculties.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!uni-enroll <span>[id]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Enroll in a university program.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!uni-drop</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Drop your current university courses.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!tuition-pay</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Pay your academic tuition fee.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!tuition-loan</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Take out a student loan for studies.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!study</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Study to increase your intelligence (XP).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!exam-take</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Take your final session exams.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!exam-results</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Check grades and passing status.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!student-id</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Scan your digital student ID card.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!alumni-net</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Access the elite alumni network.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!cert-list</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Display diplomas required for jobs.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!cert-apply <span>[id]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Apply to obtain a professional certification.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!certs</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">View your portfolio of diplomas.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!degree-info</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Check the market value of your degree.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!degree-upgrade</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Defend your bachelor's/master's thesis.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!library-rent <span>[book]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Borrow study materials from the archive.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!library-return</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Return a book to the central archive.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!tutor-hire <span>[@user]</span></div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Pay a citizen for private tutoring.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!tutor-end</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Terminate the tutoring contract.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!thesis-write</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Work on your doctoral thesis.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!thesis-submit</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Submit your thesis for evaluation.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!internship-apply</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Apply for unpaid practical training (XP).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!internship-work</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Execute your internship hours.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!seminar-join</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Attend conferences for an XP boost.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!scholar-apply</div><div class="badge public">PUBLIC</div></div><div class="cmd-desc">Apply for a corporate merit scholarship.</div></div>
             </div>
-            <div class="cmd-grid" id="warfare-grid">
-                <div class="cmd-row" style="opacity: 0.5; text-align: center; grid-column: 1 / -1;">
-                    <div class="cmd-desc">Awaiting Mainframe Data Injection...</div>
-                </div>
-            </div>
-        </div>
 
-        <!-- SECTOR 5: LIFESTYLE (Placeholder) -->
-        <div id="lifestyle" class="cmd-section">
-            <div class="sector-header">
-                <div class="sector-title">Lifestyle & Nature Sector</div>
-                <div class="sector-desc">Purchase supercars, tune engines, cultivate crops, and evolve digital pets for tactical duels.</div>
+            <h3 class="page-h3">Job Market & Freelancing</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!job-categories</div><div class="badge public">PRO</div></div><div class="cmd-desc">View job tiers (Standard, Epic, Legend).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!job-list <span>[cat]</span></div><div class="badge public">PRO</div></div><div class="cmd-desc">Display all job IDs within a category.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!job-info <span>[id]</span></div><div class="badge public">PRO</div></div><div class="cmd-desc">Display salary, requirements, and required tools.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!job-join <span>[id]</span></div><div class="badge public">PRO</div></div><div class="cmd-desc">Officially sign an employment contract.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!job-leave</div><div class="badge public">PRO</div></div><div class="cmd-desc">Resign from your current position.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!job-reqs <span>[id]</span></div><div class="badge public">PRO</div></div><div class="cmd-desc">Check required diplomas and licenses.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!job-perks <span>[id]</span></div><div class="badge public">PRO</div></div><div class="cmd-desc">View exclusive benefits of the position.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!promote</div><div class="badge public">PRO</div></div><div class="cmd-desc">Request an advancement to the next job ID.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!demote</div><div class="badge public">PRO</div></div><div class="cmd-desc">Voluntarily step down to a lower position.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!boss-meet</div><div class="badge public">PRO</div></div><div class="cmd-desc">Request a salary raise from the system.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!work</div><div class="badge public">PRO</div></div><div class="cmd-desc">Execute your standard job task.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!overtime</div><div class="badge public">PRO</div></div><div class="cmd-desc">Work overtime (risk of exhaustion).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!shift-start</div><div class="badge public">PRO</div></div><div class="cmd-desc">Start your 8-hour shift (passive mode).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!shift-end</div><div class="badge public">PRO</div></div><div class="cmd-desc">End your shift and collect earnings.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!salary-info</div><div class="badge public">PRO</div></div><div class="cmd-desc">Find out when you receive your full salary.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!salary-claim</div><div class="badge public">PRO</div></div><div class="cmd-desc">Claim your generated weekly salary.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!bonus-claim</div><div class="badge public">PRO</div></div><div class="cmd-desc">Claim your corporate performance bonus.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!vacation-req</div><div class="badge public">PRO</div></div><div class="cmd-desc">Request unpaid time off.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!vacation-ret</div><div class="badge public">PRO</div></div><div class="cmd-desc">Return from vacation to your post.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!colleagues</div><div class="badge public">PRO</div></div><div class="cmd-desc">See which citizens share your job ID.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gig-list</div><div class="badge public">PRO</div></div><div class="cmd-desc">View available independent contracts.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gig-accept <span>[id]</span></div><div class="badge public">PRO</div></div><div class="cmd-desc">Take on a temporary freelance contract.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gig-complete</div><div class="badge public">PRO</div></div><div class="cmd-desc">Submit the project and collect payment.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gig-rate <span>[amount]</span></div><div class="badge public">PRO</div></div><div class="cmd-desc">Set your hourly freelance rate.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!portfolio</div><div class="badge public">PRO</div></div><div class="cmd-desc">Show completed projects to clients.</div></div>
             </div>
-            <div class="cmd-grid" id="lifestyle-grid">
-                <div class="cmd-row" style="opacity: 0.5; text-align: center; grid-column: 1 / -1;">
-                    <div class="cmd-desc">Awaiting Mainframe Data Injection...</div>
-                </div>
+
+            <h3 class="page-h3">Licenses, Gear & Corporations</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!license-list</div><div class="badge admin">EXEC</div></div><div class="cmd-desc">All permits (Auto, Flight, Weapon, Medical).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!license-exam <span>[name]</span></div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Take the practical license test.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!license-buy <span>[name]</span></div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Buy the license (after passing).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!license-renew <span>[name]</span></div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Renew expired permits.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!license-revoke</div><div class="badge owner">ADMIN</div></div><div class="cmd-desc">Revoke an abused license from a citizen.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gear-shop</div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Catalog of tools required for jobs.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gear-buy <span>[item]</span></div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Purchase uniform or tools.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gear-equip <span>[item]</span></div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Equip gear to enable working.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gear-unequip</div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Unequip current gear.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gear-status</div><div class="badge admin">EXEC</div></div><div class="cmd-desc">View equipment durability.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gear-repair <span>[item]</span></div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Pay for repairs (maintenance).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gear-upgrade <span>[item]</span></div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Upgrade to earn more at your job.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!gear-sell <span>[item]</span></div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Sell old corporate equipment.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!corp-list</div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Player-founded corporations.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!corp-apply <span>[id]</span></div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Apply for a job at a player's corp.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!corp-leave</div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Resign from the player's corp.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!corp-create <span>[name]</span></div><div class="badge owner">MAX LVL</div></div><div class="cmd-desc">Found your own corporation.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!corp-hire <span>[@user]</span></div><div class="badge mod">CEO</div></div><div class="cmd-desc">Hire a citizen to your corp.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!corp-fire <span>[@user]</span></div><div class="badge mod">CEO</div></div><div class="cmd-desc">Fire a citizen from your corp.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!corp-pay <span>[@u] [amt]</span></div><div class="badge mod">CEO</div></div><div class="cmd-desc">Pay employee salary manually.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!union-join</div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Join the Workers' Union.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!union-leave</div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Leave the union.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!strike-start</div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Initiate a general strike for raises.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!strike-end</div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Stop the current strike.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!union-benefits</div><div class="badge admin">EXEC</div></div><div class="cmd-desc">Claim union protection benefits.</div></div>
+            </div>
+
+            <h3 class="page-h3">Stats, Taxes & Retirement</h3>
+            <div class="cmd-grid">
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!career-stats <span>[@user]</span></div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">All professional statistics.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!career-history</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Number of jobs changed over time.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!perf-review</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Current performance analysis (A-F).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!work-streak</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Consecutive workdays without vacation.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!job-market</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">General stats on job market demand.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!tax-report</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">View your debt to the tax system.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!tax-pay</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Pay taxes to avoid system fines.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!insure-buy</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Purchase life or work insurance.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!insure-claim</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Claim compensation for workplace injury.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pension-fund</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Check your pension fund balance.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!pension-invest <span>[amt]</span></div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Deposit money into the pension.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!retire</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Retire early (Permanent passive income).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!retire-cancel</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Return to the workforce from retirement.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!prestige-career</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Reset career for a unique Badge.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!prestige-rewards</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">View Prestige rewards.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-career</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Top citizens by career level.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-work</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Hardest working citizens (Work Streak).</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!lb-salary</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Citizens with the highest salaries.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!mentor-offer <span>[@user]</span></div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Take a beginner under your wing.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!mentor-accept</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Accept a mentor for an XP boost.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!mentor-end</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Break the mentorship contract.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!skill-tree</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Your corporate skill tree.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!skill-up <span>[name]</span></div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Spend points on new abilities.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!office</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">View your corporate office suite.</div></div>
+                <div class="cmd-row"><div class="cmd-top"><div class="cmd-syntax">!office-decorate</div><div class="badge owner">DIVINE</div></div><div class="cmd-desc">Buy luxury furniture for your office.</div></div>
             </div>
         </div>
 
@@ -417,16 +529,36 @@
             container.appendChild(sf);
         }
 
+        // Dynamic Greeting & Time Logic
+        function updateTerminalIntro() {
+            const termGreeting = document.getElementById('term-greeting');
+            const termTime = document.getElementById('term-time');
+            
+            const now = new Date();
+            const hour = now.getHours();
+            let greeting = "Good evening";
+            
+            if (hour >= 5 && hour < 12) greeting = "Good morning";
+            else if (hour >= 12 && hour < 18) greeting = "Good afternoon";
+            
+            termGreeting.innerHTML = `${greeting}, Agent. System reboot successful. Biometric authentication confirmed. Welcome to the ecosystem.`;
+            
+            // Format time nicely
+            const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' };
+            termTime.innerHTML = `Secure connection established at: ${now.toLocaleDateString('en-US', options)}`;
+        }
+        updateTerminalIntro();
+        // Update time every minute
+        setInterval(updateTerminalIntro, 60000);
+
         // Category Tab Switching Logic
         function openSector(sectorName) {
-            // Remove 'active' class from all buttons and sections
             const buttons = document.querySelectorAll('.cat-btn');
             const sections = document.querySelectorAll('.cmd-section');
             
             buttons.forEach(btn => btn.classList.remove('active'));
             sections.forEach(sec => sec.classList.remove('active'));
             
-            // Add 'active' class to clicked button and target section
             event.target.classList.add('active');
             document.getElementById(sectorName).classList.add('active');
         }
