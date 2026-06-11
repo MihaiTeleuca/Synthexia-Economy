@@ -1,271 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="description" content="Veyloria is a premium Discord economy ecosystem focused on banking, markets, businesses, support workflows and long-term community progression." />
-  <meta name="theme-color" content="#18F2B2" />
-  <title>Veyloria | Premium Discord Economy Ecosystem</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23070d14' stroke='%2318F2B2' stroke-width='8'/%3E%3Cpath d='M28 24 L47 76 L73 24 L62 24 L48 56 L37 24 Z' fill='%23E3B45B'/%3E%3C/svg%3E" />
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg:#05090d;
-      --bg2:#071019;
-      --panel:rgba(9,18,26,.78);
-      --panel2:rgba(14,28,40,.88);
-      --text:#f3fbff;
-      --muted:#9db1c5;
-      --soft:#c8d8e7;
-      --line:rgba(255,255,255,.11);
-      --line2:rgba(24,242,178,.26);
-      --emerald:#18F2B2;
-      --emerald2:#09B784;
-      --emerald3:#034E3D;
-      --gold:#E3B45B;
-      --gold2:#FFF1B0;
-      --violet:#7564FF;
-      --shadow:0 24px 70px rgba(0,0,0,.38);
-      --radius:20px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      min-height:100vh;
-      background:
-        radial-gradient(circle at 12% -10%, rgba(24,242,178,.18), transparent 34rem),
-        radial-gradient(circle at 92% 6%, rgba(117,100,255,.14), transparent 30rem),
-        radial-gradient(circle at 50% 110%, rgba(227,180,91,.08), transparent 28rem),
-        linear-gradient(135deg,#05090d,#071019 48%,#09131d);
-      color:var(--text);
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-      overflow-x:hidden;
-      cursor:auto;
-    }
-    ::selection{background:rgba(24,242,178,.28);color:#fff}
-    ::-webkit-scrollbar{width:9px}
-    ::-webkit-scrollbar-track{background:#05090d}
-    ::-webkit-scrollbar-thumb{background:linear-gradient(var(--emerald),var(--emerald2));border-radius:999px}
-    a{color:inherit;text-decoration:none}
-    .background-grid{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(24,242,178,.04) 1px, transparent 1px),linear-gradient(90deg,rgba(24,242,178,.04) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(circle at center,black 28%,transparent 84%);-webkit-mask-image:radial-gradient(circle at center,black 28%,transparent 84%)}
-    .shell{width:min(1360px,calc(100% - 42px));margin:0 auto;position:relative;z-index:2}
-    nav{position:fixed;top:0;left:0;width:100%;z-index:50;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:22px;border-bottom:1px solid rgba(24,242,178,.22);background:rgba(5,9,13,.82);backdrop-filter:blur(16px);box-shadow:0 10px 28px rgba(0,0,0,.24)}
-    .logo{display:flex;align-items:center;gap:12px;font-weight:950;letter-spacing:.08em;text-transform:uppercase;font-size:clamp(1.25rem,3vw,2rem);text-shadow:0 0 18px rgba(24,242,178,.46)}
-    .mark{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.18);background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.45),transparent 24%),linear-gradient(145deg,var(--emerald),var(--emerald3));box-shadow:0 0 28px rgba(24,242,178,.22),inset 0 0 16px rgba(255,255,255,.18);color:#04110d;font-weight:950}
-    .nav-links{display:flex;gap:clamp(14px,2.2vw,26px);align-items:center;flex-wrap:wrap;justify-content:center}
-    .nav-links a{font-size:.95rem;text-transform:uppercase;letter-spacing:.08em;color:#a9f3e1;font-weight:850;position:relative;transition:.25s}
-    .nav-links a:after{content:'';position:absolute;left:50%;bottom:-7px;width:0;height:2px;background:var(--emerald);transform:translateX(-50%);transition:.25s;box-shadow:0 0 14px var(--emerald)}
-    .nav-links a:hover,.nav-links a.active{color:#fff;text-shadow:0 0 14px rgba(24,242,178,.52)}
-    .nav-links a:hover:after,.nav-links a.active:after{width:100%}
-    main{position:relative;z-index:2;padding-top:124px}
-    .hero{min-height:84vh;display:grid;align-items:center;text-align:center;padding:42px 0 76px}
-    .hero-inner{display:grid;gap:30px;place-items:center}
-    .eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(24,242,178,.26);background:rgba(24,242,178,.08);color:#c4fff0;border-radius:999px;padding:10px 14px;font-weight:900;text-transform:uppercase;letter-spacing:.16em;font-size:.8rem}
-    .title{font-size:clamp(3.8rem,10vw,9rem);font-weight:950;text-transform:uppercase;line-height:.9;letter-spacing:.035em;text-shadow:0 0 24px rgba(24,242,178,.62),0 0 70px rgba(117,100,255,.28)}
-    .hero-copy{max-width:1020px;color:var(--soft);font-size:clamp(1.16rem,2.35vw,1.62rem);line-height:1.55}
-    .hero-copy strong{color:#fff}
-    .type-line{min-height:34px;text-transform:uppercase;letter-spacing:.16em;color:#a9fff0;font-size:clamp(.95rem,2vw,1.24rem);font-weight:850}
-    .btn-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:16px 30px;border-radius:12px;border:1px solid rgba(24,242,178,.45);font-weight:900;text-transform:uppercase;letter-spacing:.08em;transition:.24s ease;box-shadow:0 0 24px rgba(24,242,178,.14);background:rgba(24,242,178,.12);color:#fff}
-    .btn:hover{transform:translateY(-3px);background:var(--emerald);color:#04110d;box-shadow:0 0 36px rgba(24,242,178,.48)}
-    .btn.secondary{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.18);color:#dbe8f4;box-shadow:none}
-    .btn.secondary:hover{background:rgba(255,255,255,.10);color:#fff;border-color:#fff}
-    .dashboard{display:flex;gap:28px;align-items:stretch;justify-content:center;flex-wrap:wrap;margin-top:26px;width:100%}
-    .terminal-wrap{flex:1 1 470px;max-width:630px}
-    .terminal{height:100%;min-height:350px;background:rgba(5,10,15,.78);border:1px solid rgba(24,242,178,.32);border-radius:18px;padding:24px 24px 24px 28px;box-shadow:var(--shadow);backdrop-filter:blur(14px);font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;text-align:left;position:relative;overflow:hidden}
-    .terminal:before{content:'';position:absolute;left:0;top:0;width:4px;height:100%;background:var(--emerald);box-shadow:0 0 18px var(--emerald)}
-    .terminal-header{display:flex;gap:8px;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid rgba(24,242,178,.20)}
-    .dot{width:12px;height:12px;border-radius:50%}.red{background:#ff5f56}.yel{background:#ffbd2e}.grn{background:#27c93f}
-    .term-line{margin-bottom:12px;color:#aab9c7;font-size:clamp(.9rem,1.8vw,1.02rem);line-height:1.65}
-    .term-system{color:var(--emerald);font-weight:800}.term-user{color:#fff;font-weight:800}.term-cmd{color:var(--gold2)}.term-output{color:#75ffd9;text-shadow:0 0 8px rgba(24,242,178,.34)}.term-muted{color:#bdc9d4}
-    .stats{flex:1 1 470px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:630px}
-    .stat{position:relative;overflow:hidden;background:rgba(9,18,26,.74);border:1px solid rgba(24,242,178,.20);border-top:3px solid var(--emerald);border-radius:16px;padding:30px 18px;text-align:center;box-shadow:0 18px 48px rgba(0,0,0,.28)}
-    .stat-number{font-size:clamp(2rem,4.6vw,3.25rem);font-weight:950;color:#fff;text-shadow:0 0 18px rgba(24,242,178,.50);margin-bottom:8px}
-    .stat-label{font-size:1rem;color:#a9f3e1;text-transform:uppercase;letter-spacing:.1em;font-weight:850}
-    .section{padding:92px 0}
-    .section-title{text-align:center;font-size:clamp(2.2rem,5vw,4rem);font-weight:950;text-transform:uppercase;letter-spacing:.05em;margin-bottom:18px;text-shadow:0 0 18px rgba(24,242,178,.42)}
-    .section-lead{max-width:1040px;margin:0 auto 44px;text-align:center;color:var(--soft);font-size:clamp(1.08rem,2vw,1.35rem);line-height:1.7}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:22px}
-    .card,.large-panel,.legal-card,.mini{background:var(--panel);border:1px solid rgba(24,242,178,.18);border-radius:var(--radius);padding:28px;box-shadow:0 18px 54px rgba(0,0,0,.28);transition:.24s ease;position:relative;overflow:hidden}
-    .card:hover,.large-panel:hover,.legal-card:hover,.mini:hover{transform:translateY(-5px);border-color:rgba(24,242,178,.48);box-shadow:0 24px 62px rgba(0,0,0,.34),0 0 0 1px rgba(24,242,178,.08) inset}
-    .iconbox{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;margin-bottom:20px;background:linear-gradient(145deg,rgba(24,242,178,.18),rgba(117,100,255,.10));border:1px solid rgba(24,242,178,.24)}
-    .iconbox svg{width:30px;height:30px;stroke:var(--emerald);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-    .card h3,.large-panel h3{font-size:1.45rem;margin-bottom:12px;color:#fff}
-    .card p,.large-panel p,.legal-card span,.mini span{color:#b8c8d6;line-height:1.65;font-size:1.03rem}
-    .cmd-list{display:grid;gap:10px;margin-top:20px}
-    .cmd{display:flex;justify-content:space-between;gap:12px;align-items:center;background:rgba(0,0,0,.35);border-left:3px solid var(--emerald);border-radius:8px;padding:11px 12px;font-family:"SFMono-Regular",Consolas,monospace;color:#dbe7f2}
-    .badge{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#04110d;background:var(--emerald);border-radius:999px;padding:4px 8px;font-weight:900;white-space:nowrap}
-    .modules-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-    .mini strong{display:block;color:#fff;margin-bottom:8px;font-size:1.08rem}
-    .premium-panel,.support-panel{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}
-    .pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-    .pill{border:1px solid rgba(24,242,178,.24);background:rgba(24,242,178,.08);color:#bffff0;border-radius:999px;padding:8px 11px;font-size:.88rem;font-weight:850}
-    .legal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-    .legal-card strong{display:block;color:#fff;margin-bottom:9px;font-size:1.1rem}
-    footer{position:relative;z-index:2;padding:70px 0 34px;border-top:1px solid rgba(24,242,178,.20);background:rgba(5,9,13,.72)}
-    .footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:36px;margin-bottom:34px}
-    .footer-logo{font-size:1.8rem;font-weight:950;letter-spacing:.08em;text-transform:uppercase;text-shadow:0 0 18px rgba(24,242,178,.45)}
-    footer p,footer li,footer a{color:#a9bac9;line-height:1.65}
-    footer h4{margin-bottom:16px;color:#fff;text-transform:uppercase;letter-spacing:.08em}
-    footer ul{list-style:none;display:grid;gap:10px}
-    footer a:hover{color:#fff}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,.09);padding-top:22px;display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap;color:#8193a5}
-    .status{display:inline-flex;align-items:center;gap:8px}.status-dot{width:10px;height:10px;border-radius:50%;background:var(--emerald);box-shadow:0 0 12px var(--emerald)}
-    .floating{position:fixed;right:26px;bottom:26px;z-index:30;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;border:2px solid rgba(24,242,178,.55);background:rgba(24,242,178,.15);backdrop-filter:blur(10px);box-shadow:0 0 26px rgba(24,242,178,.32);transition:.24s ease}
-    .floating:hover{background:var(--emerald);transform:translateY(-4px);box-shadow:0 0 36px rgba(24,242,178,.58)}
-    .floating svg{width:33px;height:33px;fill:#fff}.floating:hover svg{fill:#04110d}
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}.reveal.active{opacity:1;transform:translateY(0)}
-    @media(max-width:900px){nav{position:relative;justify-content:center;flex-direction:column}main{padding-top:20px}.hero{min-height:auto}.premium-panel,.support-panel,.footer-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.floating{width:54px;height:54px;right:18px;bottom:18px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{transition:none}.btn,.card,.large-panel,.legal-card,.mini,.floating{transition:none}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Veyloria is a premium Discord economy ecosystem built around banking, markets, business progression, support and long-term community growth.">
+<title>Veyloria | Premium Discord Economy Ecosystem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="28" fill="%23060B11"/><path d="M22 18h56L50 86z" fill="%2318F2B2"/><path d="M34 28l16 38 18-38" fill="none" stroke="%23ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>'>
+<style>
+:root{--emerald:#18F2B2;--gold:#E3B45B;--violet:#7564FF;--bg:#060B11;--bg2:#09131D;--text:#F4FBFF;--muted:#9DB1C7;--soft:#D8E8F5;--line:rgba(255,255,255,.09);--panel:rgba(12,21,31,.78);--radius:26px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 12% 8%,rgba(24,242,178,.15),transparent 30rem),radial-gradient(circle at 88% 10%,rgba(117,100,255,.12),transparent 28rem),radial-gradient(circle at 48% 100%,rgba(227,180,91,.07),transparent 28rem),linear-gradient(135deg,#050A0F,#0A141E 52%,#060B11);overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:54px 54px;mask-image:radial-gradient(circle at center,black 0%,transparent 78%);opacity:.55;z-index:0}a{color:inherit;text-decoration:none}.container{width:min(1240px,calc(100% - 36px));margin:0 auto;position:relative;z-index:2}.nav{position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(24,242,178,.16);background:rgba(5,10,15,.78);backdrop-filter:blur(18px)}.nav-inner{width:min(1240px,calc(100% - 36px));margin:0 auto;min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:inline-flex;align-items:center;gap:12px;font-weight:950;letter-spacing:-.04em;font-size:1.28rem}.brand-mark{width:42px;height:42px;border-radius:16px;display:grid;place-items:center;color:#05120E;background:linear-gradient(135deg,#EFFFFA,var(--emerald) 42%,#087D5D);box-shadow:0 0 28px rgba(24,242,178,.34);font-weight:950}.nav-links{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.nav-links a{color:var(--muted);font-size:.88rem;font-weight:800;padding:10px 12px;border-radius:999px;transition:.2s}.nav-links a:hover,.nav-links a.active{color:var(--text);background:rgba(24,242,178,.10);box-shadow:inset 0 0 0 1px rgba(24,242,178,.18)}.hero{padding:86px 0 58px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:stretch}.eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0 0 18px;color:#BFFFF0;font-size:.78rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.eyebrow:before{content:"";width:28px;height:2px;background:var(--emerald);box-shadow:0 0 18px rgba(24,242,178,.7)}h1{margin:0;font-size:clamp(3.4rem,8vw,7.6rem);line-height:.88;letter-spacing:-.075em}.gradient-text{background:linear-gradient(135deg,#fff 8%,#BFFFF0 34%,var(--emerald) 58%,#FFE2A0 100%);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{margin:24px 0 0;max-width:780px;color:var(--soft);font-size:clamp(1.05rem,1.6vw,1.24rem);line-height:1.72}.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 20px;border-radius:15px;border:1px solid rgba(255,255,255,.12);font-weight:900;transition:.2s;box-shadow:0 16px 36px rgba(0,0,0,.22)}.btn.primary{color:#03110D;background:linear-gradient(135deg,#EFFFFA,var(--emerald) 48%,#07A77A);border-color:rgba(255,255,255,.2)}.btn.secondary{color:var(--text);background:rgba(255,255,255,.045)}.btn:hover{transform:translateY(-2px)}.panel,.hero-panel{background:linear-gradient(180deg,rgba(16,29,42,.9),rgba(8,16,24,.78));border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 28px 90px rgba(0,0,0,.38);overflow:hidden;position:relative}.panel:before,.hero-panel:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 0%,rgba(24,242,178,.12),transparent 28rem),radial-gradient(circle at 100% 0%,rgba(117,100,255,.10),transparent 26rem);pointer-events:none}.panel-inner,.terminal{position:relative;z-index:2;padding:26px}.terminal{font-family:"Fira Code",ui-monospace,SFMono-Regular,Menlo,monospace}.term-bar{display:flex;gap:8px;padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid rgba(255,255,255,.09)}.term-dot{width:12px;height:12px;border-radius:50%}.term-red{background:#FF5F56}.term-yellow{background:#FFBD2E}.term-green{background:#27C93F}.term-line{color:#9CB0C5;line-height:1.7;font-size:.94rem;margin:0 0 12px}.term-key{color:var(--emerald);font-weight:800}.term-value{color:var(--text)}.term-note{color:#FFE2A0}.section{padding:44px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:22px}.section-title{margin:0;font-size:clamp(2rem,4vw,3.4rem);letter-spacing:-.055em;line-height:1}.section-copy{margin:12px 0 0;color:var(--muted);max-width:780px;line-height:1.72;font-size:1.03rem}.grid{display:grid;gap:18px}.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.card{position:relative;overflow:hidden;min-height:100%;padding:22px;border-radius:22px;border:1px solid rgba(255,255,255,.09);background:rgba(12,21,31,.72);box-shadow:0 18px 55px rgba(0,0,0,.24)}.card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(24,242,178,.10),transparent 38%,rgba(117,100,255,.08));pointer-events:none}.card>*{position:relative;z-index:1}.card-kicker{color:#AFFFF0;font-size:.75rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.card h3{margin:12px 0 10px;font-size:1.23rem;letter-spacing:-.02em}.card p{margin:0;color:var(--muted);line-height:1.65}.command-card{display:flex;flex-direction:column;gap:16px;min-height:260px}.command-name{display:inline-flex;width:max-content;max-width:100%;padding:8px 10px;border-radius:10px;color:#EFFFFA;background:rgba(24,242,178,.12);border:1px solid rgba(24,242,178,.18);font-family:"Fira Code",ui-monospace,monospace;font-weight:800;font-size:.92rem}.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}.badge{padding:6px 8px;border-radius:999px;color:#BFFFF0;background:rgba(24,242,178,.09);border:1px solid rgba(24,242,178,.16);font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px;align-items:stretch}.list{display:grid;gap:12px}.list-item{padding:16px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:rgba(255,255,255,.035);color:var(--muted);line-height:1.58}.list-item strong{color:var(--text)}.footer{margin-top:56px;border-top:1px solid rgba(255,255,255,.09);background:rgba(4,8,12,.58)}.footer-grid{display:grid;grid-template-columns:1.2fr repeat(3,.8fr);gap:26px;padding:48px 0}.footer h4{margin:0 0 14px}.footer p,.footer a{color:var(--muted);line-height:1.7}.footer a:hover{color:var(--emerald)}.footer-links{display:grid;gap:9px}.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:18px 0 28px;display:flex;justify-content:space-between;gap:14px;color:#7F93A8;font-size:.92rem;flex-wrap:wrap}@media(max-width:1060px){.hero-grid,.split{grid-template-columns:1fr}.grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}@media(max-width:680px){.nav-inner{align-items:flex-start;flex-direction:column;padding:14px 0}.nav-links{justify-content:flex-start}.hero{padding-top:46px}.grid-4{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <div class="background-grid"></div>
-  <nav>
-    <a href="#home" class="logo"><span class="mark">V</span><span>Veyloria</span></a>
-    <div class="nav-links">
-      <a href="#home" class="active">Home</a>
-      <a href="#ecosystem">Ecosystem</a>
-      <a href="#commands">Commands</a>
-      <a href="#support">Support</a>
-      <a href="#premium">Premium</a>
-      <a href="#legal">Legal</a>
-    </div>
-  </nav>
+<nav class="nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">V</span><span>Veyloria</span></a><div class="nav-links"><a class="active" href="index.html">Home</a>
+<a class="" href="ecosystem.html">Ecosystem</a>
+<a class="" href="commands.html">Commands</a>
+<a class="" href="docs.html">Docs</a>
+<a class="" href="premium.html">Premium</a>
+<a class="" href="support.html">Support</a>
+<a class="" href="status.html">Status</a></div></div></nav>
+<main>
+<section class="hero"><div class="container hero-grid"><div><p class="eyebrow">Premium Discord economy ecosystem</p><h1><span class="gradient-text">Veyloria</span></h1><p class="lead">Veyloria is built for communities that want an economy experience with structure, not just a list of isolated commands. The project brings together wallet and banking systems, business progression, market tools, user identity, rewards, documentation and support flows inside a cleaner product environment.</p><p class="lead">The website is prepared as the public face of the ecosystem: a place for the invite link, support server, command directory, documentation, premium information, policies and future system pages. Instead of presenting exaggerated numbers or unstable claims, the page focuses on the product direction and the practical value Veyloria should bring to a Discord server.</p><div class="hero-actions"><a class="btn primary" href="https://discord.com/oauth2/authorize?client_id=1514297852954677441&permissions=2825027556208119&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener">Invite Veyloria</a><a class="btn secondary" href="https://discord.gg/2Trw25ZTxy" target="_blank" rel="noopener">Open Support Server</a><a class="btn secondary" href="commands.html">View Commands</a></div></div><aside class="hero-panel"><div class="terminal"><div class="term-bar"><span class="term-dot term-red"></span><span class="term-dot term-yellow"></span><span class="term-dot term-green"></span></div><p class="term-line"><span class="term-key">system:</span> initializing Veyloria public interface</p><p class="term-line"><span class="term-key">prefix:</span> <span class="term-value">v!</span></p><p class="term-line"><span class="term-key">currency:</span> <span class="term-value">VL$</span></p><p class="term-line"><span class="term-key">identity:</span> <span class="term-value">emerald economy, support-ready, documentation-first</span></p><p class="term-line"><span class="term-key">core modules:</span> banking, market, business, roles, support, reports, premium, safety</p><p class="term-line term-note">This interface avoids heavy effects so the site stays fast on GitHub Pages, mobile devices and lower-end browsers.</p></div></aside></div></section>
+<section class="section"><div class="container"><div class="section-head"><div><p class="eyebrow">Core and system layer</p><h2 class="section-title">A product structure, not a random bot page.</h2><p class="section-copy">The front page now gives Veyloria a stronger foundation by separating the core economy from the supporting systems around it. This makes the bot easier to present, easier to document and easier to expand later when the ecosystem page becomes more detailed.</p></div></div><div class="grid grid-4">
+<article class="card"><span class="card-kicker">Core Economy</span><h3>Banking and wallet systems</h3><p>Wallet, bank, vaults, transfers, deposits and account progression form the financial base that every other economy module can build on.</p></article>
+<article class="card"><span class="card-kicker">Market Layer</span><h3>Trading and pricing direction</h3><p>Market listings, auctions, trades and future price systems create a more active economy where user decisions matter beyond claiming rewards.</p></article>
+<article class="card"><span class="card-kicker">Progression</span><h3>Profiles and long-term identity</h3><p>Profiles, net worth, achievements, titles and prestige give users a reason to keep building their account and comparing progress in a readable way.</p></article>
+<article class="card"><span class="card-kicker">Business</span><h3>Growth beyond simple work</h3><p>Business systems are planned as a more advanced progression layer, allowing users to grow income, manage assets and expand their economic presence.</p></article>
+<article class="card"><span class="card-kicker">Support System</span><h3>Tickets, reports and documentation</h3><p>The support hub is part of the product experience, with rules, guides, bug reports and official resources designed to reduce confusion.</p></article>
+<article class="card"><span class="card-kicker">Safety</span><h3>Moderation and server control</h3><p>Server owners need safe configuration, permission guidance, log areas and role separation so the bot can fit into serious communities.</p></article>
+<article class="card"><span class="card-kicker">Premium</span><h3>Optional advanced access</h3><p>Premium should feel like a refined support and convenience layer, with clear expectations, controlled access and honest information.</p></article>
+<article class="card"><span class="card-kicker">Public Website</span><h3>Pages for every important area</h3><p>The site now links to ecosystem, commands, docs, premium, support, status and legal pages so the project can grow without crowding the homepage.</p></article>
+</div></div></section>
+<section class="section"><div class="container split"><div class="panel"><div class="panel-inner"><p class="eyebrow">System overview</p><h2 class="section-title">Prepared for the next pages.</h2><p class="section-copy">The index page introduces the product, while the next pages should go deeper. The ecosystem page can explain every economy module in a polished way, the commands page can provide searchable command details, and the documentation page can become the user manual for setup, permissions and support.</p><div class="hero-actions"><a class="btn primary" href="ecosystem.html">Open Ecosystem</a><a class="btn secondary" href="docs.html">Read Docs</a></div></div></div><div class="list"><div class="list-item"><strong>Core system:</strong> prefix, configuration, language, server settings, economy channel, logs, permissions and safe launch flow.</div><div class="list-item"><strong>Account system:</strong> profile, wallet, bank, net worth, inventory, achievements, reputation, titles and future progression identity.</div><div class="list-item"><strong>Economy system:</strong> rewards, work, daily claims, market, auctions, trading, loans, investments, shop and controlled risk modules.</div><div class="list-item"><strong>Support system:</strong> tickets, rules, reports, support policy, community guidelines and official resource channels.</div></div></div></section>
+<section class="section" id="commands-preview"><div class="container"><div class="section-head"><div><p class="eyebrow">Command preview</p><h2 class="section-title">Eight command areas, balanced into two rows.</h2><p class="section-copy">The homepage now shows a clean preview of eight command groups, arranged as four cards per row on desktop. The full command directory can later include expandable cards where each command reveals what it does, who can use it, required permissions and practical notes.</p></div><a class="btn secondary" href="commands.html">Open full directory</a></div><div class="grid grid-4">
+<article class="card command-card"><span class="card-kicker">Configuration</span><h3>Server setup</h3><span class="command-name">v!config</span><p>Commands for prefix, language, economy channel, logging, permission checks and server-level settings.</p><div class="badges"><span class="badge">Admin</span><span class="badge">Core</span></div></article>
+<article class="card command-card"><span class="card-kicker">Identity</span><h3>Profiles</h3><span class="command-name">v!profile</span><p>Profile, bio, title, achievements, badges, reputation, statistics and public user economy identity.</p><div class="badges"><span class="badge">Public</span><span class="badge">Progression</span></div></article>
+<article class="card command-card"><span class="card-kicker">Money</span><h3>Wallet and bank</h3><span class="command-name">v!balance</span><p>Wallet, bank, deposits, withdrawals, transfers, history, vault upgrades and net worth overview.</p><div class="badges"><span class="badge">Public</span><span class="badge">Finance</span></div></article>
+<article class="card command-card"><span class="card-kicker">Income</span><h3>Rewards and work</h3><span class="command-name">v!work</span><p>Daily rewards, work actions, search, scavenging, cooldowns and controlled earning systems.</p><div class="badges"><span class="badge">Public</span><span class="badge">Economy</span></div></article>
+<article class="card command-card"><span class="card-kicker">Commerce</span><h3>Market and trading</h3><span class="command-name">v!market</span><p>Player market, item listings, auctions, bids, trades and transaction-based economy movement.</p><div class="badges"><span class="badge">Public</span><span class="badge">Market</span></div></article>
+<article class="card command-card"><span class="card-kicker">Expansion</span><h3>Business systems</h3><span class="command-name">v!business</span><p>Business ownership, upgrades, income growth, management paths and long-term asset progression.</p><div class="badges"><span class="badge">Public</span><span class="badge">Advanced</span></div></article>
+<article class="card command-card"><span class="card-kicker">Community</span><h3>Reports and suggestions</h3><span class="command-name">v!report</span><p>Bug reports, suggestions, support routing, user feedback and safer communication with staff.</p><div class="badges"><span class="badge">Public</span><span class="badge">Support</span></div></article>
+<article class="card command-card"><span class="card-kicker">Control</span><h3>Moderation and audit</h3><span class="command-name">v!audit</span><p>Moderation utilities, logs, safety tools, enforcement records and administrative economy controls.</p><div class="badges"><span class="badge">Staff</span><span class="badge">Security</span></div></article>
+</div></div></section>
+<section class="section"><div class="container"><div class="panel"><div class="panel-inner"><p class="eyebrow">Next step</p><h2 class="section-title">After this, we build the ecosystem page.</h2><p class="section-copy">The homepage is now prepared as a premium entry point. The next page should be the detailed ecosystem page, where every large module can be explained naturally: core setup, economy accounts, banking, market, business, jobs, inventory, social systems, reports, premium and support.</p></div></div></div></section>
+</main>
 
-  <main id="home">
-    <section class="hero shell">
-      <div class="hero-inner reveal active">
-        <div class="eyebrow">Official emerald economy ecosystem</div>
-        <h1 class="title">Veyloria</h1>
-        <p class="hero-copy"><strong>Veyloria</strong> is a premium Discord economy ecosystem built for communities that want more than a basic balance command. It is shaped around structured banking, market movement, business progression, user identity, support workflows and long-term server growth. The product direction is simple: make the economy feel clear enough for new members, deep enough for active communities and organized enough for staff to manage without turning support into chaos.</p>
-        <div class="type-line"><span id="typewriterText"></span><span>_</span></div>
-        <div class="btn-row">
-          <a class="btn" href="https://discord.com/oauth2/authorize?client_id=1514297852954677441&permissions=2825027556208119&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener">Invite Veyloria</a>
-          <a class="btn secondary" href="https://discord.gg/2Trw25ZTxy" target="_blank" rel="noopener">Open Support Hub</a>
-          <a class="btn secondary" href="#commands">View Command Direction</a>
-        </div>
-        <div class="dashboard">
-          <div class="terminal-wrap">
-            <div class="terminal">
-              <div class="terminal-header"><span class="dot red"></span><span class="dot yel"></span><span class="dot grn"></span></div>
-              <div class="term-line"><span class="term-system">[Veyloria]:</span> Initializing economy blueprint...</div>
-              <div class="term-line"><span class="term-system">[Identity]:</span> Official color <span class="term-output">#18F2B2</span>, prefix <span class="term-output">v!</span>, currency <span class="term-output">VL$</span>.</div>
-              <div class="term-line"><span class="term-user">Hub@Veyloria:~$</span> <span class="term-cmd">scan ecosystem</span></div>
-              <div class="term-line" style="border-left:2px solid var(--emerald);padding-left:12px;margin-top:10px">
-                <span class="term-output">Blueprint indexed.</span><br>
-                <span class="term-muted">Command concepts:</span> 835 planned economy concepts<br>
-                <span class="term-muted">Modules:</span> 53 structured development areas<br>
-                <span class="term-muted">Focus:</span> banking, markets, businesses, support and audit<br>
-                <span class="term-muted">Status:</span> public website ready for GitHub Pages
-              </div>
-              <div class="term-line"><span class="term-user">Hub@Veyloria:~$</span> <span class="term-cmd">ready</span></div>
-            </div>
-          </div>
-          <div class="stats">
-            <div class="stat"><div class="stat-number count-up" data-target="835">0</div><div class="stat-label">Blueprint Commands</div></div>
-            <div class="stat"><div class="stat-number count-up" data-target="53">0</div><div class="stat-label">Economy Modules</div></div>
-            <div class="stat"><div class="stat-number">VL$</div><div class="stat-label">Official Currency</div></div>
-            <div class="stat"><div class="stat-number">BDFD</div><div class="stat-label">CV2 Direction</div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="ecosystem" class="section shell reveal">
-      <h2 class="section-title">Core Ecosystem</h2>
-      <p class="section-lead">Veyloria is designed as a connected economy product, not a collection of unrelated commands. Each system should give users a reason to return, make progress and understand what their actions affect. Banking supports financial clarity, markets create movement, businesses give long-term goals, properties and assets create ownership, and support workflows keep the product easier to maintain as the community grows.</p>
-      <div class="grid">
-        <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M3 10h18M5 10V8l7-4 7 4v2M6 10v8M10 10v8M14 10v8M18 10v8M4 18h16v3H4z"/></svg></div><h3>Banking and Ledger</h3><p>The banking layer is meant to make money readable, traceable and easy to understand. Wallets, bank accounts, vaults, statements, transfers and net worth should help users see where their progress comes from, while staff can keep an eye on suspicious movement or unusual behavior when needed.</p></article>
-        <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M4 18l5-6 4 3 7-9M15 6h5v5"/></svg></div><h3>Markets and Trading</h3><p>The market direction is focused on controlled activity rather than random numbers. Trading, auctions, investment options, item prices and portfolio views can create movement inside a server economy, while clear limits and logs help prevent the system from becoming confusing or easy to abuse.</p></article>
-        <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M4 20V8h6v12M14 20V4h6v16M2 20h20"/></svg></div><h3>Business Progression</h3><p>Businesses give users a long-term path beyond daily rewards. A server economy feels stronger when members can create companies, upgrade them, hire workers, manage income, expand branches and build a visible identity around what they own instead of only collecting balance over time.</p></article>
-        <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V9l7-5 7 5v11M9 20v-6h6v6"/></svg></div><h3>Properties and Assets</h3><p>Properties, collectibles, vehicles, pets and other assets make progression feel more personal. These systems are not only decorative; they can support rent, upgrades, prestige, status, utility and economy depth when connected carefully to the rest of the product.</p></article>
-        <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div><h3>Audit and Security</h3><p>A premium economy needs safety around the numbers. Logs, suspicious transfer signals, staff review tools, abuse prevention and clear moderation paths make the system easier to trust, especially when money, trading and group resources become important inside a server.</p></article>
-        <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M5 19h14M7 19V9l5-4 5 4v10M9 13h6"/></svg></div><h3>Support Workflows</h3><p>Good support is part of the product. Guides, tickets, known issues, role panels, premium information and clean policy pages help users solve problems without turning every question into a long staff conversation. The support hub should feel organized from the first minute.</p></article>
-      </div>
-    </section>
-
-    <section id="commands" class="section shell reveal">
-      <h2 class="section-title">Command Blueprint</h2>
-      <p class="section-lead">The command catalog currently points toward 835 economy concepts across 53 modules. This website presents that direction honestly as a development blueprint, so users understand the planned scale without confusing it with fake live statistics. The final public command directory can later be separated into filters, categories, examples and permission notes.</p>
-      <div class="grid">
-        <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div><h3>Core Setup</h3><p>Core commands cover the first layer of configuration: prefix, language, currency, logs, module control, server settings and onboarding. This area should make setup predictable for admins while keeping normal users focused on the economy itself.</p><div class="cmd-list"><div class="cmd"><strong>/help</strong><span class="badge">Public</span></div><div class="cmd"><strong>v!setup</strong><span class="badge">Admin</span></div><div class="cmd"><strong>v!setcurrency</strong><span class="badge">Admin</span></div></div></article>
-        <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M4 7h16v12H4zM8 11h8M8 15h5"/></svg></div><h3>Profile and Money</h3><p>Profile and money commands define the personal economy identity of each user. Balance, bank, wallet, vault, privacy, badges, reputation and statements should show progress clearly without making users feel lost inside too many disconnected screens.</p><div class="cmd-list"><div class="cmd"><strong>/profile</strong><span class="badge">Public</span></div><div class="cmd"><strong>/balance</strong><span class="badge">Public</span></div><div class="cmd"><strong>/bank</strong><span class="badge">Public</span></div></div></article>
-        <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M5 18h14M7 18V6h10v12M9 10h6M9 14h6"/></svg></div><h3>Work and Business</h3><p>Work commands create active income, while business systems create long-term growth. Daily rewards, jobs, careers, business creation, employees, suppliers and upgrades can turn simple activity into a stronger progression loop.</p><div class="cmd-list"><div class="cmd"><strong>/daily</strong><span class="badge">Public</span></div><div class="cmd"><strong>/work</strong><span class="badge">Public</span></div><div class="cmd"><strong>v!businesscreate</strong><span class="badge">Public</span></div></div></article>
-        <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M4 17l5-5 4 3 7-8M16 7h4v4"/></svg></div><h3>Market and Investments</h3><p>Market commands are meant to add risk, timing and decision-making to the economy. Auctions, trades, stocks, portfolios and price movement should be understandable enough for casual users and deep enough for active economy players.</p><div class="cmd-list"><div class="cmd"><strong>/market</strong><span class="badge">Public</span></div><div class="cmd"><strong>/trade</strong><span class="badge">Public</span></div><div class="cmd"><strong>/stocks</strong><span class="badge">Public</span></div></div></article>
-        <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v6c0 4-3 7-7 8-4-1-7-4-7-8V7zM9 12l2 2 4-5"/></svg></div><h3>Factions and Clans</h3><p>Group systems give communities something to build together. Clans, factions, shared vaults, projects, research, territories and internal contribution logs can create teamwork without making the economy depend only on individual grinding.</p><div class="cmd-list"><div class="cmd"><strong>/clan</strong><span class="badge">Public</span></div><div class="cmd"><strong>/faction</strong><span class="badge">Public</span></div><div class="cmd"><strong>v!clanproject</strong><span class="badge">Public</span></div></div></article>
-        <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M4 15h16l-2-5H6zM7 18h1M16 18h1M6 10l2-4h8l2 4"/></svg></div><h3>Vehicles, Pets and Assets</h3><p>Vehicle, pet and asset systems can make progression feel visible and personal. Garages, races, pet care, property ownership, crafting and collectibles can support identity, utility and prestige when balanced around the main economy.</p><div class="cmd-list"><div class="cmd"><strong>/garage</strong><span class="badge">Public</span></div><div class="cmd"><strong>/pet</strong><span class="badge">Public</span></div><div class="cmd"><strong>/property</strong><span class="badge">Public</span></div></div></article>
-      </div>
-    </section>
-
-    <section class="section shell reveal">
-      <h2 class="section-title">Development Modules</h2>
-      <p class="section-lead">The internal catalog can later become a complete documentation system. For now, these module groups show how the economy is intended to be organized: each category should have a clear purpose, its own examples and its own permission expectations instead of being mixed into one long command list.</p>
-      <div class="modules-strip">
-        <div class="mini"><strong>Core and Configuration</strong><span>Prefix, language, currency, setup, permissions, logs and module control for server administrators.</span></div>
-        <div class="mini"><strong>Profile and Identity</strong><span>User profiles, reputation, badges, titles, public history and progression identity.</span></div>
-        <div class="mini"><strong>Wallet and Banking</strong><span>Wallet, bank, vault, deposits, withdrawals, interest, cards and financial statements.</span></div>
-        <div class="mini"><strong>Work and Progression</strong><span>Jobs, shifts, careers, streaks, active income and controlled reward loops.</span></div>
-        <div class="mini"><strong>Business Systems</strong><span>Companies, upgrades, employees, suppliers, products, dividends and expansion paths.</span></div>
-        <div class="mini"><strong>Markets and Stocks</strong><span>Prices, trades, auctions, investment decisions, portfolios and economy movement.</span></div>
-        <div class="mini"><strong>Clans and Factions</strong><span>Shared vaults, projects, policies, territories, research and group development.</span></div>
-        <div class="mini"><strong>Endgame and Audit</strong><span>Prestige, seasons, taxes, governance, reports, moderation signals and economy safety.</span></div>
-      </div>
-    </section>
-
-    <section id="support" class="section shell reveal">
-      <h2 class="section-title">Support Hub</h2>
-      <p class="section-lead">The support server is meant to be the official place where users can read information, understand the product and ask for help when a case needs attention. The experience should feel calm and structured: users check guides first, use public help for simple questions, report public bugs in the right place and open tickets only when the issue is specific, private or technical.</p>
-      <div class="support-panel">
-        <div class="large-panel"><h3>Clear support before fast support</h3><p>Veyloria support should be based on useful information, not on repeated pings or unclear messages. A good support request explains the affected command, what the user expected, what actually happened, whether the problem repeats and what safe screenshots or error details are available.</p><p>This approach helps staff answer faster while keeping the server clean. It also makes the product look more serious because users can see that help is organized around a process, not random conversations.</p><div class="pill-row"><span class="pill">Tickets</span><span class="pill">Bug Reports</span><span class="pill">Known Issues</span><span class="pill">Guides</span></div></div>
-        <div class="large-panel"><h3>Official links only</h3><p>The support hub should be treated as the trusted source for invites, policies, updates, premium questions and safety information. Users should avoid private messages that claim to represent the project unless the information is confirmed inside official channels.</p><p>If something feels suspicious, outdated or incomplete, the safest path is to ask through the support hub instead of following unofficial instructions.</p><a class="btn" href="https://discord.gg/2Trw25ZTxy" target="_blank" rel="noopener">Join Support Hub</a></div>
-      </div>
-    </section>
-
-    <section id="premium" class="section shell reveal">
-      <h2 class="section-title">Premium Access</h2>
-      <p class="section-lead">Premium should feel like a more refined support and configuration layer, not like a way to make normal users feel ignored. The strongest premium experience is honest: faster review where possible, advanced setup guidance, cleaner access to support areas, early previews when available and clear limitations so users know exactly what they are receiving.</p>
-      <div class="premium-panel">
-        <div class="large-panel"><h3>Built for serious communities</h3><p>Premium access can help server owners who want more structured guidance around setup, permissions, economy configuration and future feature previews. It should give them a clearer path to support while still respecting staff time and product safety.</p><p>Every premium promise should stay realistic. Priority support, safe activation, visible terms and clear communication are more valuable than exaggerated claims that create confusion later.</p><div class="pill-row"><span class="pill">Priority Support</span><span class="pill">Early Previews</span><span class="pill">Setup Guidance</span><span class="pill">Premium Channels</span></div></div>
-        <div class="large-panel"><h3>Safe activation</h3><p>Premium information should always be handled through official resources. Users should not trust private offers, fake discount pages or messages asking for tokens, passwords, recovery codes or payment credentials.</p><p>The final premium page should include benefits, limitations, activation steps, support rules, safety notes and any refund or access policy that applies.</p><a class="btn" href="https://discord.gg/2Trw25ZTxy" target="_blank" rel="noopener">Ask About Premium</a></div>
-      </div>
-    </section>
-
-    <section id="legal" class="section shell reveal">
-      <h2 class="section-title">Policies and Resources</h2>
-      <p class="section-lead">A product website feels more trustworthy when its policy pages are visible before users need them. These pages explain expected behavior, data handling, support boundaries and the way the community should interact with official resources. They can be expanded over time as Veyloria moves from blueprint to public product.</p>
-      <div class="legal-grid">
-        <a class="legal-card" href="tos.html"><strong>Terms of Service</strong><span>Usage conditions, limitations and accepted behavior for the Veyloria ecosystem.</span></a>
-        <a class="legal-card" href="privacy.html"><strong>Privacy Policy</strong><span>Data handling, user protection and safety information written for a support-focused product.</span></a>
-        <a class="legal-card" href="support-policy.html"><strong>Support Policy</strong><span>Ticket usage, report quality, premium expectations and official support boundaries.</span></a>
-        <a class="legal-card" href="community-guidelines.html"><strong>Community Guidelines</strong><span>Server conduct, communication standards and safety expectations for the support hub.</span></a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="shell">
-      <div class="footer-grid">
-        <div><a class="footer-logo" href="#home">Veyloria</a><p>A premium Discord economy ecosystem for communities that want structured progression, clearer support and a polished emerald identity around every important system.</p></div>
-        <div><h4>Navigation</h4><ul><li><a href="#home">Home</a></li><li><a href="#ecosystem">Ecosystem</a></li><li><a href="#commands">Commands</a></li><li><a href="#premium">Premium</a></li></ul></div>
-        <div><h4>Resources</h4><ul><li><a href="https://discord.com/oauth2/authorize?client_id=1514297852954677441&permissions=2825027556208119&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener">Bot Invite</a></li><li><a href="https://discord.gg/2Trw25ZTxy" target="_blank" rel="noopener">Support Hub</a></li><li><a href="docs.html">Documentation</a></li><li><a href="https://discord.gg/2Trw25ZTxy" target="_blank" rel="noopener">Status and Updates</a></li></ul></div>
-        <div><h4>Legal</h4><ul><li><a href="tos.html">Terms</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="support-policy.html">Support Policy</a></li><li><a href="community-guidelines.html">Guidelines</a></li></ul></div>
-      </div>
-      <div class="footer-bottom"><span>© 2026 Veyloria. All rights reserved.</span><span class="status"><span class="status-dot"></span>Ready for GitHub Pages</span><span>Build: emerald-light-v2</span></div>
-    </div>
-  </footer>
-
-  <a href="https://discord.gg/2Trw25ZTxy" target="_blank" rel="noopener" title="Join Support Hub" class="floating"><svg viewBox="0 0 127.14 96.36"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1,105.25,105.25,0,0,0,32.19-16.14c2.64-27.38-4.51-51.11-19.32-72.15ZM42.68,65.27c-5.36,0-9.72-4.86-9.72-10.84s4.28-10.84,9.72-10.84c5.45,0,9.76,4.86,9.72,10.84C52.4,60.41,48.13,65.27,42.68,65.27Zm41.71,0c-5.36,0-9.72-4.86-9.72-10.84s4.28-10.84,9.72-10.84c5.45,0,9.76,4.86,9.72,10.84C94.11,60.41,89.84,65.27,84.39,65.27Z"/></svg></a>
-
-  <script>
-    const phrases=['Build a clear economy.','Make progression feel structured.','Support users without noise.','Grow with a premium emerald identity.'];
-    let pi=0,pj=0,del=false;const target=document.getElementById('typewriterText');
-    function typeLoop(){target.textContent=phrases[pi].slice(0,pj);if(!del&&pj<phrases[pi].length){pj++;setTimeout(typeLoop,48)}else if(del&&pj>0){pj--;setTimeout(typeLoop,22)}else if(pj===phrases[pi].length){del=true;setTimeout(typeLoop,1500)}else{del=false;pi=(pi+1)%phrases.length;setTimeout(typeLoop,360)}}typeLoop();
-    function reveal(){document.querySelectorAll('.reveal').forEach(el=>{if(el.getBoundingClientRect().top<innerHeight-90)el.classList.add('active')})}addEventListener('scroll',reveal,{passive:true});reveal();
-    const counters=document.querySelectorAll('.count-up');
-    const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const t=+entry.target.dataset.target;let c=0;const step=()=>{c+=Math.max(1,t/42);if(c<t){entry.target.textContent=Math.ceil(c).toLocaleString();setTimeout(step,26)}else entry.target.textContent=t.toLocaleString()+'+'};step();observer.unobserve(entry.target)}})},{threshold:.45});counters.forEach(c=>observer.observe(c));
-    const navLinks=document.querySelectorAll('.nav-links a[href^="#"]');
-    addEventListener('scroll',()=>{let current='home';document.querySelectorAll('main section[id], main[id]').forEach(sec=>{const top=sec.getBoundingClientRect().top;if(top<170)current=sec.id});navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current))},{passive:true});
-  </script>
-</body>
-</html>
+<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">V</span><span>Veyloria</span></a><p>Veyloria is presented as a premium economy ecosystem for Discord communities that want structured progression, reliable support information and a cleaner product experience around configuration, banking, markets and long-term server growth.</p></div><div><h4>Product</h4><div class="footer-links"><a href="ecosystem.html">Ecosystem</a><a href="commands.html">Command Directory</a><a href="docs.html">Documentation</a><a href="premium.html">Premium Access</a></div></div><div><h4>Support</h4><div class="footer-links"><a href="https://discord.gg/2Trw25ZTxy" target="_blank" rel="noopener">Support Server</a><a href="support.html">Support Center</a><a href="status.html">Status</a><a href="support-policy.html">Support Policy</a></div></div><div><h4>Legal</h4><div class="footer-links"><a href="tos.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="community-guidelines.html">Community Guidelines</a></div></div></div><div class="footer-bottom"><span>© 2026 Veyloria. All rights reserved.</span><span>Official color: #18F2B2 • Prefix: v! • Currency: VL$</span></div></div></footer></body></html>
